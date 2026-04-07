@@ -384,7 +384,11 @@ h2.lt .ac { color: var(--blue-300); }
 .pip-info p { font-size: 0.78rem; color: var(--mocha-500); font-weight: 300; }
 
 /* PRICING */
-.price-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; margin-top: 3.5rem; align-items: start; }
+.price-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; margin-top: 3.5rem; align-items: stretch; }
+
+.price-grid .plan { height: 100%; display: flex; flex-direction: column; }
+.price-grid .plan-feats { flex: 1; }
+.price-grid .plan > a { margin-top: auto; }
 
 .plan {
   background: var(--bg); border: 1px solid var(--border);
@@ -752,63 +756,65 @@ footer {
 <section id="pricing" class="sec sec-tint">
   <div class="eyebrow"><span class="ey-line"></span> Investment</div>
   <h2>Simple pricing. <span class="ac">Real value.</span></h2>
-  <p class="lead">Straightforward plans with no hidden fees and no long-term lock-ins.</p>
+  <p class="lead">Consistent marketing, done for you every month. All plans are monthly retainers with no long-term contracts required. Cancel anytime with 30 days' notice.</p>
 
-  <div class="pricing-grid">
-          <article class="price-card">
-            <div class="badge">Starter</div>
-            <h3>Getting started &amp; testing the waters</h3>
-            <div class="price">$1,000 <span>/ month</span></div>
-            <div class="price-note">1 platform · 8 posts · 1 newsletter send</div>
-            <ul>
-              <li><span class="check">✓</span><span>8 social media posts per month</span></li>
-              <li><span class="check">✓</span><span>1 platform covered</span></li>
-              <li><span class="check">✓</span><span>1 email newsletter send per month</span></li>
-              <li><span class="check">✓</span><span>Dedicated Slack/email channel</span></li>
-              <li><span class="check">✓</span><span>48-hour response time</span></li>
-              <li><span class="check">✓</span><span>1 revision round per month</span></li>
-            </ul>
-            <div class="hero-actions" style="margin-top: 26px;"><a class="ghost-btn" href="#cta">Get Started</a></div>
-          </article>
+  <div class="price-grid rev">
+    <div class="plan">
+      <div class="plan-tier">Starter</div>
+      <div class="plan-price"><sup>$</sup>1,000</div>
+      <div class="plan-per">per month</div>
+      <div class="plan-desc">Getting started &amp; testing the waters.</div>
+      <ul class="plan-feats">
+        <li class="plan-feat-item"><div class="chk">✓</div>8 social media posts per month</li>
+        <li class="plan-feat-item"><div class="chk">✓</div>1 platform covered</li>
+        <li class="plan-feat-item"><div class="chk">✓</div>1 email newsletter send per month</li>
+        <li class="plan-feat-item"><div class="chk">✓</div>Dedicated Slack/email channel</li>
+        <li class="plan-feat-item"><div class="chk">✓</div>48 hrs response time</li>
+        <li class="plan-feat-item"><div class="chk">✓</div>1 revision round per month</li>
+      </ul>
+      <a href="#cta" class="btn-o" style="display:block; text-align:center;">Get Started</a>
+    </div>
 
-          <article class="price-card featured">
-            <div class="badge">Most Popular · Growth</div>
-            <h3>Growing businesses ready to scale</h3>
-            <div class="price">$1,250 <span>/ month</span></div>
-            <div class="price-note">2 platforms · 12 posts · strategy + reporting</div>
-            <ul>
-              <li><span class="check">✓</span><span>12 social media posts per month</span></li>
-              <li><span class="check">✓</span><span>2 platforms covered</span></li>
-              <li><span class="check">✓</span><span>2 newsletter sends per month</span></li>
-              <li><span class="check">✓</span><span>Custom graphics / visual assets</span></li>
-              <li><span class="check">✓</span><span>Monthly 30-minute strategy call</span></li>
-              <li><span class="check">✓</span><span>Monthly performance report</span></li>
-              <li><span class="check">✓</span><span>30-day content calendar</span></li>
-              <li><span class="check">✓</span><span>24-hour response time + 2 revision rounds</span></li>
-              <li><span class="check">✓</span><span>1 hour of ad hoc consulting per month</span></li>
-            </ul>
-            <div class="hero-actions" style="margin-top: 26px;"><a class="cta-btn" href="#cta">Get Started</a></div>
-          </article>
+    <div class="plan feat">
+      <div class="plan-badge">Most Popular</div>
+      <div class="plan-tier">Growth</div>
+      <div class="plan-price" style="color:var(--blue-300)"><sup style="color:var(--blue-400)">$</sup>1,250</div>
+      <div class="plan-per">per month</div>
+      <div class="plan-desc">Growing businesses ready to scale.</div>
+      <ul class="plan-feats">
+        <li class="plan-feat-item"><div class="chk">✓</div>12 social media posts per month</li>
+        <li class="plan-feat-item"><div class="chk">✓</div>2 platforms covered</li>
+        <li class="plan-feat-item"><div class="chk">✓</div>2 newsletter sends per month</li>
+        <li class="plan-feat-item"><div class="chk">✓</div>Custom graphics / visual assets</li>
+        <li class="plan-feat-item"><div class="chk">✓</div>Monthly strategy call (30 min)</li>
+        <li class="plan-feat-item"><div class="chk">✓</div>Monthly performance report</li>
+        <li class="plan-feat-item"><div class="chk">✓</div>Content calendar (30-day ahead)</li>
+        <li class="plan-feat-item"><div class="chk">✓</div>24 hrs response time</li>
+        <li class="plan-feat-item"><div class="chk">✓</div>2 revision rounds + 1 hr ad hoc consulting</li>
+      </ul>
+      <a href="#cta" class="btn-sage" style="display:block; text-align:center;">Get Started</a>
+    </div>
 
-          <article class="price-card">
-            <div class="badge">Pro</div>
-            <h3>Established brands wanting full-service support</h3>
-            <div class="price">$1,500 <span>/ month</span></div>
-            <div class="price-note">3 platforms · 16 posts · strategic oversight</div>
-            <ul>
-              <li><span class="check">✓</span><span>16 social media posts per month</span></li>
-              <li><span class="check">✓</span><span>3 platforms covered</span></li>
-              <li><span class="check">✓</span><span>2 newsletter sends per month</span></li>
-              <li><span class="check">✓</span><span>Custom graphics / visual assets</span></li>
-              <li><span class="check">✓</span><span>Monthly strategy call + performance report</span></li>
-              <li><span class="check">✓</span><span>30-day content calendar</span></li>
-              <li><span class="check">✓</span><span>Quarterly marketing strategy review</span></li>
-              <li><span class="check">✓</span><span>Same-day response + 3 revision rounds</span></li>
-              <li><span class="check">✓</span><span>2 hours of ad hoc consulting per month</span></li>
-            </ul>
-            <div class="hero-actions" style="margin-top: 26px;"><a class="ghost-btn" href="#cta">Let's Talk</a></div>
-          </article>
-        </div>
+    <div class="plan">
+      <div class="plan-tier">Pro</div>
+      <div class="plan-price"><sup>$</sup>1,500</div>
+      <div class="plan-per">per month</div>
+      <div class="plan-desc">Established brands wanting full-service support.</div>
+      <ul class="plan-feats">
+        <li class="plan-feat-item"><div class="chk">✓</div>16 social media posts per month</li>
+        <li class="plan-feat-item"><div class="chk">✓</div>3 platforms covered</li>
+        <li class="plan-feat-item"><div class="chk">✓</div>2 newsletter sends per month</li>
+        <li class="plan-feat-item"><div class="chk">✓</div>Custom graphics / visual assets</li>
+        <li class="plan-feat-item"><div class="chk">✓</div>Monthly strategy call + report</li>
+        <li class="plan-feat-item"><div class="chk">✓</div>Content calendar (30-day ahead)</li>
+        <li class="plan-feat-item"><div class="chk">✓</div>Quarterly marketing strategy review</li>
+        <li class="plan-feat-item"><div class="chk">✓</div>Same-day response time</li>
+        <li class="plan-feat-item"><div class="chk">✓</div>3 revision rounds + 2 hrs consulting</li>
+      </ul>
+      <a href="#cta" class="btn-o" style="display:block; text-align:center;">Let's Talk</a>
+    </div>
+  </div>
+</section>
 
 
 
