@@ -630,36 +630,37 @@ footer{background:#0A0807;padding:2.5rem 5vw;display:flex;justify-content:space-
 
     <div class="contact-grid">
       <div>
-        <div class="contact-detail"><span class="cd-label">Email</span><span class="cd-val"><a href="mailto:montoyamarketingfirm@gmail.com">montoyamarketingfirm@gmail.com</a></span></div>
+        <div class="contact-detail"><span class="cd-label">Email</span><span class="cd-val"><a href="/cdn-cgi/l/email-protection#791416170d16001814180b121c0d10171e1f100b14391e14181015571a1614"><span class="__cf_email__" data-cfemail="3f5250514b50465e525e4d545a4b56515859564d527f58525e5653115c5052">[email&#160;protected]</span></a></span></div>
         <div class="contact-detail"><span class="cd-label">Location</span><span class="cd-val">Bonsall, California</span></div>
         <div class="contact-detail"><span class="cd-label">Response Time</span><span class="cd-val">Within 1 business day</span></div>
         <div class="contact-detail"><span class="cd-label">Availability</span><span class="cd-val">Currently accepting new clients</span></div>
         <div class="contact-promise"><p>Every inquiry receives a personal response from our team &mdash; not an automated acknowledgment. We take the time to understand your business before recommending any engagement.</p></div>
       </div>
 
-      <form class="contact-form" id="contactForm" action="https://formspree.io/f/mzdkqgrq" method="POST">
+      <form class="contact-form" id="contactForm">
         <div class="form-row">
-          <div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" placeholder="Jane" required></div>
-          <div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" placeholder="Smith" required></div>
+          <div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" name="first_name" placeholder="Jane" required></div>
+          <div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" name="last_name" placeholder="Smith" required></div>
         </div>
-        <div class="form-group"><label for="email">Business Email</label><input type="email" id="email" placeholder="jane@company.com" required></div>
-        <div class="form-group"><label for="company">Company Name</label><input type="text" id="company" placeholder="Acme Inc."></div>
+        <div class="form-group"><label for="email">Business Email</label><input type="email" id="email" name="email" placeholder="jane@company.com" required></div>
+        <div class="form-group"><label for="company">Company Name</label><input type="text" id="company" name="company" placeholder="Acme Inc."></div>
         <div class="form-group">
           <label for="plan">Plan of Interest</label>
-          <select id="plan">
+          <select id="plan" name="plan">
             <option value="">Select a retainer plan</option>
-            <option>Starter &mdash; $850/mo</option>
-            <option>Growth &mdash; $1,000/mo (Most Popular)</option>
-            <option>Pro &mdash; $1,250/mo</option>
-            <option>Not sure yet &mdash; let's talk</option>
+            <option>Starter - $850/mo</option>
+            <option>Growth - $1,000/mo (Most Popular)</option>
+            <option>Pro - $1,250/mo</option>
+            <option>Not sure yet - let's talk</option>
           </select>
         </div>
-        <div class="form-group"><label for="message">Tell us about your business &amp; goals</label><textarea id="message" placeholder="What does your business do, and what marketing challenges are you facing?"></textarea></div>
+        <div class="form-group"><label for="message">Tell us about your business and goals</label><textarea id="message" name="message" placeholder="What does your business do, and what marketing challenges are you facing?"></textarea></div>
         <div class="form-submit">
-          <button type="submit" class="btn-p">Send Message &#8594;</button>
+          <button type="submit" class="btn-p" id="submitBtn">Send Message &#8594;</button>
           <span class="form-note-txt">We respond within 1 business day.</span>
         </div>
         <div id="form-success">Thank you &mdash; your message has been received. We will be in touch within one business day.</div>
+        <div id="form-error" style="display:none;padding:1rem 1.25rem;background:rgba(220,50,50,0.1);border:1px solid rgba(220,50,50,0.3);border-radius:3px;color:#c0392b;font-size:0.85rem;margin-top:0.5rem;">Something went wrong. Please email us directly at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e38e8c8d978c9a828e82918886978a8d84858a918ea3848e828a8fcd808c8e">[email&#160;protected]</a></div>
       </form>
     </div>
   </div>
@@ -677,17 +678,13 @@ footer{background:#0A0807;padding:2.5rem 5vw;display:flex;justify-content:space-
   </footer>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function() {
   function navigate(name) {
     var pages = document.querySelectorAll('.page');
-    for (var i = 0; i < pages.length; i++) {
-      pages[i].classList.remove('active');
-    }
+    for (var i = 0; i < pages.length; i++) { pages[i].classList.remove('active'); }
     var target = document.getElementById('page-' + name);
-    if (target) {
-      target.classList.add('active');
-    }
+    if (target) { target.classList.add('active'); }
     var navBtns = document.querySelectorAll('.nav-btn');
     for (var j = 0; j < navBtns.length; j++) {
       navBtns[j].classList.toggle('active', navBtns[j].getAttribute('data-nav') === name);
@@ -703,11 +700,7 @@ footer{background:#0A0807;padding:2.5rem 5vw;display:flex;justify-content:space-
     var target = e.target;
     while (target && target !== document) {
       var navTarget = target.getAttribute('data-nav');
-      if (navTarget) {
-        e.preventDefault();
-        navigate(navTarget);
-        return;
-      }
+      if (navTarget) { e.preventDefault(); navigate(navTarget); return; }
       target = target.parentNode;
     }
   });
@@ -730,18 +723,20 @@ footer{background:#0A0807;padding:2.5rem 5vw;display:flex;justify-content:space-
   if (form) {
     form.addEventListener('submit', function(e) {
       e.preventDefault();
-      var btn = form.querySelector('button[type="submit"]');
+      var btn = document.getElementById('submitBtn');
+      var success = document.getElementById('form-success');
+      var error = document.getElementById('form-error');
       btn.textContent = 'Sending...';
       btn.disabled = true;
-      setTimeout(function() {
-        var success = document.getElementById('form-success');
-        if (success) success.style.display = 'block';
-        btn.style.display = 'none';
-        form.reset();
-      }, 800);
-    });
-  }
-})();
-</script>
-</body>
-</html>
+      error.style.display = 'none';
+
+      var data = new FormData(form);
+
+      fetch('https://formspree.io/f/mzdkqgrq', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function(response) {
+        if (response.ok) {
+          success.style.display = 'block';
