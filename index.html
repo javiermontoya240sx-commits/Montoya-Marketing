@@ -75,9 +75,7 @@ h3{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;colo
 .ticker-item::after{content:'';display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--blue);margin-left:2.5rem;}
 @keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
-/* ─────────────────────────────────────────
-   HOME PAGE
-───────────────────────────────────────── */
+/* ── HOME PAGE ── */
 .hero{min-height:calc(100vh - 72px);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:4rem 5vw;gap:6rem;position:relative;}
 .hero-rule{position:absolute;left:0;top:72px;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--border) 20%,var(--border) 80%,transparent);}
 .hero-kicker{display:inline-flex;align-items:center;gap:0.75rem;font-size:0.72rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--blue);margin-bottom:2rem;}
@@ -96,7 +94,6 @@ h3{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;colo
 .mc-val{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--ink);line-height:1;margin-bottom:0.3rem;}
 .mc-desc{font-size:0.82rem;color:var(--ink-60);font-weight:300;}
 
-/* home — services preview */
 .home-services{padding:5rem 5vw;background:var(--white);}
 .home-services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden;margin-top:3rem;}
 .home-svc{background:var(--white);padding:2rem;cursor:pointer;transition:background .2s;position:relative;overflow:hidden;}
@@ -108,16 +105,13 @@ h3{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;colo
 .home-svc p{font-size:0.82rem;color:var(--ink-60);font-weight:300;line-height:1.6;}
 .home-services-footer{display:flex;justify-content:flex-end;margin-top:2rem;}
 
-/* home — why strip */
 .home-why{padding:5rem 5vw;background:var(--ink);}
 .home-why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3rem;margin-top:3.5rem;}
 .hw-item h4{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--cream);margin-bottom:0.5rem;}
 .hw-item p{font-size:0.83rem;color:rgba(250,248,245,0.45);font-weight:300;line-height:1.65;}
 .hw-num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:600;color:var(--blue);opacity:0.5;line-height:1;margin-bottom:0.75rem;}
 
-/* ─────────────────────────────────────────
-   ABOUT PAGE
-───────────────────────────────────────── */
+/* ── ABOUT PAGE ── */
 .about-hero{padding:5rem 5vw 0;background:var(--ink);}
 .about-hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:end;padding-bottom:5rem;}
 .about-stats{display:flex;flex-direction:column;}
@@ -138,9 +132,7 @@ h3{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;colo
 .mission-inner{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
 .mission-quote{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-style:italic;font-weight:400;color:var(--ink);line-height:1.5;padding-left:2rem;border-left:2px solid var(--blue);}
 
-/* ─────────────────────────────────────────
-   SERVICES PAGE
-───────────────────────────────────────── */
+/* ── SERVICES PAGE ── */
 .services-hero{padding:5rem 5vw 3rem;background:var(--white);}
 .services-hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:end;}
 .services-grid-full{padding:0 5vw 5rem;background:var(--white);}
@@ -157,9 +149,7 @@ h3{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;colo
 .tag{font-size:0.68rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;background:var(--blue-lt);color:var(--blue-dk);padding:0.25rem 0.65rem;border-radius:2px;}
 .platform-row{display:flex;align-items:center;gap:0.75rem;margin-top:1rem;padding:0.65rem 0.9rem;background:var(--white);border-radius:3px;border:1px solid var(--border);}
 
-/* ─────────────────────────────────────────
-   PROCESS PAGE
-───────────────────────────────────────── */
+/* ── PROCESS PAGE ── */
 .process-hero{padding:5rem 5vw 3rem;background:var(--cream);}
 .process-steps{padding:0 5vw 5rem;background:var(--cream);}
 .proc-list{display:flex;flex-direction:column;gap:0;margin-top:1rem;}
@@ -171,9 +161,7 @@ h3{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;colo
 .proc-content .proc-note{display:inline-flex;align-items:center;gap:0.5rem;margin-top:1rem;font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);}
 .process-cta{padding:5rem 5vw;background:var(--ink);text-align:center;}
 
-/* ─────────────────────────────────────────
-   PRICING PAGE
-───────────────────────────────────────── */
+/* ── PRICING PAGE ── */
 .pricing-hero{padding:5rem 5vw 3rem;background:var(--white);}
 .pricing-hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:end;}
 .pricing-plans{padding:0 5vw 5rem;background:var(--white);}
@@ -213,9 +201,7 @@ h3{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;colo
 .faq-item h4{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--ink);margin-bottom:0.6rem;}
 .faq-item p{font-size:0.85rem;color:var(--ink-60);font-weight:300;line-height:1.7;}
 
-/* ─────────────────────────────────────────
-   CONTACT PAGE
-───────────────────────────────────────── */
+/* ── CONTACT PAGE ── */
 .contact-page{padding:5rem 5vw;background:var(--ink);min-height:calc(100vh - 72px);}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;margin-top:4rem;}
 .contact-info{display:flex;flex-direction:column;gap:2rem;}
@@ -285,11 +271,8 @@ footer{background:#0A0807;padding:2.5rem 5vw;display:flex;justify-content:space-
   <a onclick="showPage('contact')" class="m-link m-cta">Contact Us</a>
 </div>
 
-<!-- ═══════════════════════════════════════
-     HOME PAGE
-════════════════════════════════════════ -->
+<!-- HOME PAGE -->
 <div id="page-home" class="page active">
-
   <div class="hero">
     <div class="hero-rule"></div>
     <div class="hero-left">
@@ -321,498 +304,4 @@ footer{background:#0A0807;padding:2.5rem 5vw;display:flex;justify-content:space-
   <div class="ticker">
     <div class="ticker-track">
       <span class="ticker-item">Brand Strategy</span><span class="ticker-item">Paid Advertising</span><span class="ticker-item">SEO &amp; Content</span><span class="ticker-item">Social Media</span><span class="ticker-item">Email Marketing</span><span class="ticker-item">Analytics</span><span class="ticker-item">Conversion Optimization</span><span class="ticker-item">Lead Generation</span>
-      <span class="ticker-item">Brand Strategy</span><span class="ticker-item">Paid Advertising</span><span class="ticker-item">SEO &amp; Content</span><span class="ticker-item">Social Media</span><span class="ticker-item">Email Marketing</span><span class="ticker-item">Analytics</span><span class="ticker-item">Conversion Optimization</span><span class="ticker-item">Lead Generation</span>
-    </div>
-  </div>
-
-  <div class="home-services">
-    <div class="section-label">What We Deliver</div>
-    <h2>Integrated services.<br><em>One partner.</em></h2>
-    <div class="home-services-grid">
-      <div class="home-svc" onclick="showPage('services')"><div class="home-svc-num">01</div><h4>Brand Strategy &amp; Identity</h4><p>Positioning and visual identity systems that communicate authority.</p></div>
-      <div class="home-svc" onclick="showPage('services')"><div class="home-svc-num">02</div><h4>Social Media Management</h4><p>Content strategy and execution across the platforms that matter.</p></div>
-      <div class="home-svc" onclick="showPage('services')"><div class="home-svc-num">03</div><h4>Paid Advertising</h4><p>ROI-focused campaigns on Google and Meta engineered for growth.</p></div>
-      <div class="home-svc" onclick="showPage('services')"><div class="home-svc-num">04</div><h4>SEO &amp; Content Marketing</h4><p>Long-horizon organic growth through technical SEO and content.</p></div>
-      <div class="home-svc" onclick="showPage('services')"><div class="home-svc-num">05</div><h4>Email &amp; Automation</h4><p>Lifecycle programs and workflows that nurture and convert.</p></div>
-      <div class="home-svc" onclick="showPage('services')"><div class="home-svc-num">06</div><h4>Analytics &amp; Reporting</h4><p>Executive-level monthly reports that drive business decisions.</p></div>
-    </div>
-    <div class="home-services-footer">
-      <button class="btn-ghost" onclick="showPage('services')">View All Services &#8594;</button>
-    </div>
-  </div>
-
-  <div class="home-why">
-    <div class="section-label" style="color:rgba(250,248,245,0.4);"><span style="width:28px;height:1px;background:rgba(91,155,213,0.5);display:block;"></span>Why Montoya</div>
-    <h2 class="light">The advantage of <em>choosing new.</em></h2>
-    <div class="home-why-grid">
-      <div class="hw-item"><div class="hw-num">01</div><h4>You are not a number here</h4><p>We deliberately limit client volume so every account receives senior-level attention.</p></div>
-      <div class="hw-item"><div class="hw-num">02</div><h4>No recycled playbooks</h4><p>Every strategy is built from scratch for your specific business and competitive environment.</p></div>
-      <div class="hw-item"><div class="hw-num">03</div><h4>Contractual accountability</h4><p>Retainer agreements define exact deliverables, timelines, and revision rights.</p></div>
-      <div class="hw-item"><div class="hw-num">04</div><h4>We earn the renewal monthly</h4><p>With only 30 days' notice to cancel, we are structurally incentivized to perform.</p></div>
-    </div>
-  </div>
-
-  <footer>
-    <span class="f-logo" onclick="showPage('home')">Montoya<span>.</span></span>
-    <ul class="f-links">
-      <li><a onclick="showPage('about')">About</a></li>
-      <li><a onclick="showPage('services')">Services</a></li>
-      <li><a onclick="showPage('process')">Process</a></li>
-      <li><a onclick="showPage('pricing')">Retainers</a></li>
-      <li><a onclick="showPage('contact')">Contact</a></li>
-    </ul>
-    <div class="f-copy">&copy; 2025 Montoya Marketing Agency &middot; Bonsall, CA</div>
-  </footer>
-</div>
-
-<!-- ═══════════════════════════════════════
-     ABOUT PAGE
-════════════════════════════════════════ -->
-<div id="page-about" class="page">
-
-  <div class="about-hero">
-    <div class="section-label" style="color:rgba(91,155,213,0.7);"><span style="background:rgba(91,155,213,0.5);width:28px;height:1px;display:block;"></span>Who We Are</div>
-    <div class="about-hero-inner">
-      <div>
-        <h1 style="color:var(--cream);">Built different.<br><em style="color:var(--blue);">By design.</em></h1>
-        <p class="lead light">We are a boutique marketing agency that trades volume for precision. Every client receives the focus and expertise that only a selective partnership model can deliver.</p>
-      </div>
-      <div class="about-stats">
-        <div class="a-row">
-          <div class="a-number">100%</div>
-          <div class="a-copy"><h4>Founder-Led on Every Account</h4><p>You work directly with the principals of the agency &mdash; not a rotating roster of account managers.</p></div>
-        </div>
-        <div class="a-row">
-          <div class="a-number">&#8734;</div>
-          <div class="a-copy"><h4>Revisions Until It Is Right</h4><p>We do not invoice our confidence. Every deliverable is refined until it meets the standard we both expect.</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="about-values-section">
-    <div class="section-label">Our Principles</div>
-    <h2>What we believe.<br><em>How we operate.</em></h2>
-    <div class="about-values-grid">
-      <div class="av-card"><div class="av-num">01</div><h4>Results Over Optics</h4><p>We measure every engagement by revenue impact, lead quality, and growth metrics &mdash; not impressions or follower counts.</p></div>
-      <div class="av-card"><div class="av-num">02</div><h4>Strategy Before Execution</h4><p>Every campaign begins with deep market research and a documented strategy. We never execute blindly.</p></div>
-      <div class="av-card"><div class="av-num">03</div><h4>Radical Transparency</h4><p>Monthly reporting covers what worked, what did not, and exactly where every dollar was allocated.</p></div>
-      <div class="av-card"><div class="av-num">04</div><h4>Long-Term Thinking</h4><p>We build marketing systems designed to compound over time, not campaigns optimized for a single quarter.</p></div>
-    </div>
-  </div>
-
-  <div class="about-mission">
-    <div class="mission-inner">
-      <div>
-        <div class="section-label">Our Mission</div>
-        <h2>A different kind of <em>agency.</em></h2>
-        <p class="lead" style="margin-bottom:2rem;">Montoya Marketing Agency was founded on the conviction that most businesses deserve better than the impersonal, template-driven service they receive from large agencies.</p>
-        <p class="lead">We built a firm where every client relationship is treated as a true partnership &mdash; with shared goals, shared accountability, and work we are genuinely proud of.</p>
-        <div style="margin-top:2.5rem;">
-          <button class="btn-primary" onclick="showPage('contact')">Work With Us</button>
-        </div>
-      </div>
-      <div>
-        <p class="mission-quote">"We retain clients because of the results we deliver &mdash; not because of the contracts we write."</p>
-        <p style="margin-top:1.5rem;font-size:0.82rem;color:var(--ink-40);font-style:italic;">The Montoya Standard</p>
-      </div>
-    </div>
-  </div>
-
-  <footer>
-    <span class="f-logo" onclick="showPage('home')">Montoya<span>.</span></span>
-    <ul class="f-links">
-      <li><a onclick="showPage('about')">About</a></li>
-      <li><a onclick="showPage('services')">Services</a></li>
-      <li><a onclick="showPage('process')">Process</a></li>
-      <li><a onclick="showPage('pricing')">Retainers</a></li>
-      <li><a onclick="showPage('contact')">Contact</a></li>
-    </ul>
-    <div class="f-copy">&copy; 2025 Montoya Marketing Agency &middot; Bonsall, CA</div>
-  </footer>
-</div>
-
-<!-- ═══════════════════════════════════════
-     SERVICES PAGE
-════════════════════════════════════════ -->
-<div id="page-services" class="page">
-
-  <div class="services-hero">
-    <div class="services-hero-inner">
-      <div>
-        <div class="section-label">What We Deliver</div>
-        <h2>Integrated services.<br><em>One partner.</em></h2>
-      </div>
-      <p class="lead">Every service is designed to work as part of a unified strategy &mdash; not as isolated tactics deployed in silos.</p>
-    </div>
-  </div>
-
-  <div class="services-grid-full">
-    <div class="svc-full-grid">
-
-      <div class="svc-card-full">
-        <div class="svc-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-dk)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-        <h3>Brand Strategy &amp; Identity</h3>
-        <p>Positioning, messaging architecture, and visual identity systems that communicate authority and build lasting market recognition. We define who you are, why you matter, and how to make every touchpoint reinforce that conviction.</p>
-        <div class="svc-tags"><span class="tag">Positioning</span><span class="tag">Messaging</span><span class="tag">Visual Identity</span><span class="tag">Brand Guidelines</span></div>
-      </div>
-
-      <div class="svc-card-full">
-        <div class="svc-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-dk)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div>
-        <h3>Social Media Management</h3>
-        <p>Content strategy and consistent execution across the platforms that matter to your audience. We build real communities and convert followers into loyal customers &mdash; not just impressions.</p>
-        <div class="platform-row">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="#1877F2"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.532-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.269h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22"><rect width="24" height="24" rx="5" fill="#d62976"/><rect x="2.5" y="2.5" width="19" height="19" rx="4" fill="none" stroke="white" stroke-width="1.4"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="white" stroke-width="1.4"/><circle cx="17.2" cy="6.8" r="1.1" fill="white"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </div>
-        <div class="svc-tags"><span class="tag">Content Creation</span><span class="tag">Community</span><span class="tag">Scheduling</span></div>
-      </div>
-
-      <div class="svc-card-full">
-        <div class="svc-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-dk)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
-        <h3>Paid Advertising</h3>
-        <p>ROI-focused campaigns engineered for efficient customer acquisition. We manage spend intelligently across the platforms where your customers are actively searching and browsing.</p>
-        <div class="platform-row">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-          <span style="font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;color:#0082FB;">Meta</span>
-        </div>
-        <div class="svc-tags"><span class="tag">Google Ads</span><span class="tag">Meta Ads</span><span class="tag">Retargeting</span><span class="tag">Audience Strategy</span></div>
-      </div>
-
-      <div class="svc-card-full">
-        <div class="svc-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-dk)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
-        <h3>SEO &amp; Content Marketing</h3>
-        <p>Long-horizon organic growth through technical SEO, authoritative content strategy, and strategic link development. We build visibility that compounds month over month.</p>
-        <div class="svc-tags"><span class="tag">Technical SEO</span><span class="tag">Content Strategy</span><span class="tag">Link Building</span><span class="tag">Keyword Research</span></div>
-      </div>
-
-      <div class="svc-card-full">
-        <div class="svc-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-dk)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-        <h3>Email &amp; Marketing Automation</h3>
-        <p>Lifecycle email programs and automation workflows that nurture prospects and drive repeat revenue. Your list becomes a reliable, scalable revenue channel.</p>
-        <div class="svc-tags"><span class="tag">Klaviyo</span><span class="tag">Mailchimp</span><span class="tag">Drip Sequences</span><span class="tag">Automation</span></div>
-      </div>
-
-      <div class="svc-card-full">
-        <div class="svc-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-dk)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <h3>Analytics &amp; Performance Reporting</h3>
-        <p>Executive-level monthly reports that translate campaign data into clear business decisions. We track what matters and present it in a way that drives action.</p>
-        <div class="svc-tags"><span class="tag">GA4</span><span class="tag">Custom Dashboards</span><span class="tag">KPI Tracking</span><span class="tag">Monthly Reports</span></div>
-      </div>
-
-    </div>
-    <div style="margin-top:3rem;text-align:center;">
-      <button class="btn-primary" onclick="showPage('contact')">Discuss Your Needs &#8594;</button>
-    </div>
-  </div>
-
-  <footer>
-    <span class="f-logo" onclick="showPage('home')">Montoya<span>.</span></span>
-    <ul class="f-links">
-      <li><a onclick="showPage('about')">About</a></li>
-      <li><a onclick="showPage('services')">Services</a></li>
-      <li><a onclick="showPage('process')">Process</a></li>
-      <li><a onclick="showPage('pricing')">Retainers</a></li>
-      <li><a onclick="showPage('contact')">Contact</a></li>
-    </ul>
-    <div class="f-copy">&copy; 2025 Montoya Marketing Agency &middot; Bonsall, CA</div>
-  </footer>
-</div>
-
-<!-- ═══════════════════════════════════════
-     PROCESS PAGE
-════════════════════════════════════════ -->
-<div id="page-process" class="page">
-
-  <div class="process-hero">
-    <div class="section-label">How We Work</div>
-    <h2>A deliberate process.<br><em>Every engagement.</em></h2>
-    <p class="lead">From first conversation to ongoing optimization &mdash; a structured approach that eliminates guesswork and keeps every party accountable.</p>
-  </div>
-
-  <div class="process-steps">
-    <div class="proc-list">
-      <div class="proc-item">
-        <div class="proc-num-big">01</div>
-        <div class="proc-content">
-          <h3>Discovery &amp; Audit</h3>
-          <p>Before recommending a single tactic, we conduct a thorough audit of your current digital presence, competitive landscape, target audience, and business objectives. This forms the factual foundation of everything that follows.</p>
-          <span class="proc-note">&#10003; Delivered as a written audit report</span>
-        </div>
-      </div>
-      <div class="proc-item">
-        <div class="proc-num-big">02</div>
-        <div class="proc-content">
-          <h3>Strategy Development</h3>
-          <p>A channel-specific marketing strategy is documented and presented for your review and approval. This strategy defines target personas, key messages, channel mix, KPIs, and a 90-day execution roadmap. Nothing proceeds without your sign-off.</p>
-          <span class="proc-note">&#10003; Delivered as a strategy document for your records</span>
-        </div>
-      </div>
-      <div class="proc-item">
-        <div class="proc-num-big">03</div>
-        <div class="proc-content">
-          <h3>Retainer Agreement</h3>
-          <p>We formalize the engagement with a clear monthly retainer agreement that outlines exact deliverables, revision rights, communication expectations, response time SLAs, and cancellation terms. You will always know precisely what you are paying for.</p>
-          <span class="proc-note">&#10003; Signed agreement provided before any work begins</span>
-        </div>
-      </div>
-      <div class="proc-item">
-        <div class="proc-num-big">04</div>
-        <div class="proc-content">
-          <h3>Creative Execution &amp; Delivery</h3>
-          <p>Campaigns are built and submitted for your approval before going live. All creative assets, copy, and campaign structures are shared in advance. We operate on a content calendar so you always know what is coming and when.</p>
-          <span class="proc-note">&#10003; Approval required before any content is published</span>
-        </div>
-      </div>
-      <div class="proc-item">
-        <div class="proc-num-big">05</div>
-        <div class="proc-content">
-          <h3>Monthly Reporting &amp; Strategy Review</h3>
-          <p>At the end of each month, you receive a comprehensive performance report and join a strategy call to review results, discuss what the data is telling us, and agree on priorities for the following month. No surprises, no spin.</p>
-          <span class="proc-note">&#10003; Written report delivered before each monthly call</span>
-        </div>
-      </div>
-      <div class="proc-item">
-        <div class="proc-num-big">06</div>
-        <div class="proc-content">
-          <h3>Optimize &amp; Scale</h3>
-          <p>Data from every campaign informs the next. We continuously refine targeting, messaging, and channel allocation to improve performance over time. When something is working, we invest more in it. When it is not, we adapt quickly.</p>
-          <span class="proc-note">&#10003; Ongoing optimization included in all retainer plans</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="process-cta">
-    <h2 class="light">Ready to begin?</h2>
-    <p class="lead light" style="margin:1rem auto 2.5rem;text-align:center;">The first step is a no-obligation discovery call to understand your business and goals.</p>
-    <button class="btn-blue" onclick="showPage('contact')">Schedule a Discovery Call &#8594;</button>
-  </div>
-
-  <footer>
-    <span class="f-logo" onclick="showPage('home')">Montoya<span>.</span></span>
-    <ul class="f-links">
-      <li><a onclick="showPage('about')">About</a></li>
-      <li><a onclick="showPage('services')">Services</a></li>
-      <li><a onclick="showPage('process')">Process</a></li>
-      <li><a onclick="showPage('pricing')">Retainers</a></li>
-      <li><a onclick="showPage('contact')">Contact</a></li>
-    </ul>
-    <div class="f-copy">&copy; 2025 Montoya Marketing Agency &middot; Bonsall, CA</div>
-  </footer>
-</div>
-
-<!-- ═══════════════════════════════════════
-     PRICING PAGE
-════════════════════════════════════════ -->
-<div id="page-pricing" class="page">
-
-  <div class="pricing-hero">
-    <div class="pricing-hero-inner">
-      <div>
-        <div class="section-label">Retainer Plans</div>
-        <h2>Transparent pricing.<br><em>No surprises.</em></h2>
-        <p class="pricing-note" style="font-size:0.82rem;color:var(--ink-40);font-style:italic;margin-top:0.5rem;">All plans are monthly retainers. Cancel with 30 days' written notice.</p>
-      </div>
-      <p class="lead">Every plan includes a signed retainer agreement outlining exact deliverables, revision rights, and cancellation terms. You always know what you are paying for.</p>
-    </div>
-  </div>
-
-  <div class="pricing-plans">
-    <div class="price-grid">
-
-      <div class="plan">
-        <div class="plan-top-bar"></div>
-        <div class="plan-tag">Starter</div>
-        <div class="plan-price"><sup>$</sup>850</div>
-        <div class="plan-per">per month &mdash; billed monthly</div>
-        <div class="plan-commitment">Monthly Retainer</div>
-        <div class="plan-divider"></div>
-        <div class="plan-desc">For businesses establishing a digital presence and beginning to build their audience.</div>
-        <ul class="plan-features">
-          <li class="plan-feature"><div class="feat-check"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>8 social media posts per month</li>
-          <li class="plan-feature"><div class="feat-check"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>1 platform managed</li>
-          <li class="plan-feature"><div class="feat-check"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>1 email newsletter per month</li>
-          <li class="plan-feature"><div class="feat-check"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>Dedicated communication channel</li>
-          <li class="plan-feature"><div class="feat-check"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>48-hour response SLA</li>
-          <li class="plan-feature"><div class="feat-check"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>1 revision round per deliverable</li>
-        </ul>
-        <div class="plan-contract-note">Includes signed retainer agreement. Cancel with 30 days' written notice.</div>
-        <button class="btn-plan btn-plan-outline" onclick="showPage('contact')">Get Started</button>
-      </div>
-
-      <div class="plan featured">
-        <div class="plan-top-bar"></div>
-        <div class="plan-tag">Growth &mdash; Most Popular</div>
-        <div class="plan-price"><sup>$</sup>1,000</div>
-        <div class="plan-per">per month &mdash; billed monthly</div>
-        <div class="plan-commitment">Monthly Retainer</div>
-        <div class="plan-divider"></div>
-        <div class="plan-desc">For growing businesses ready to invest in multi-channel marketing at scale.</div>
-        <ul class="plan-features">
-          <li class="plan-feature"><div class="feat-check"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>12 social media posts per month</li>
-          <li class="plan-feature"><div class="feat-check"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>2 platforms managed</li>
-          <li class="plan-feature"><div class="feat-check"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>2 newsletter sends per month</li>
-          <li class="plan-feature"><div class="feat-check"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>Custom graphics &amp; visual assets</li>
-          <li class="plan-feature"><div class="feat-check"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>Monthly strategy call (30 min)</li>
-          <li class="plan-feature"><div class="feat-check"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>Monthly performance report</li>
-          <li class="plan-feature"><div class="feat-check"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>30-day content calendar</li>
-          <li class="plan-feature"><div class="feat-check"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>24-hour response SLA</li>
-          <li class="plan-feature"><div class="feat-check"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>2 revision rounds + 1hr consulting</li>
-        </ul>
-        <div class="plan-contract-note">Includes signed retainer agreement. Cancel with 30 days' written notice.</div>
-        <button class="btn-plan btn-plan-solid" onclick="showPage('contact')">Get Started</button>
-      </div>
-
-      <div class="plan">
-        <div class="plan-top-bar"></div>
-        <div class="plan-tag">Pro</div>
-        <div class="plan-price"><sup>$</sup>1,250</div>
-        <div class="plan-per">per month &mdash; billed monthly</div>
-        <div class="plan-commitment">Monthly Retainer</div>
-        <div class="plan-divider"></div>
-        <div class="plan-desc">For established brands requiring full-service marketing management and strategic oversight.</div>
-        <ul class="plan-features">
-          <li class="plan-feature"><div class="feat-check"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>16 social media posts per month</li>
-          <li class="plan-feature"><div class="feat-check"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>3 platforms managed</li>
-          <li class="plan-feature"><div class="feat-check"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>2 newsletter sends per month</li>
-          <li class="plan-feature"><div class="feat-check"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>Custom graphics &amp; visual assets</li>
-          <li class="plan-feature"><div class="feat-check"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>Monthly strategy call + report</li>
-          <li class="plan-feature"><div class="feat-check"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>30-day content calendar</li>
-          <li class="plan-feature"><div class="feat-check"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>Quarterly strategy review</li>
-          <li class="plan-feature"><div class="feat-check"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>Same-day response SLA</li>
-          <li class="plan-feature"><div class="feat-check"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>3 revision rounds + 2hrs consulting</li>
-        </ul>
-        <div class="plan-contract-note">Includes signed retainer agreement. Cancel with 30 days' written notice.</div>
-        <button class="btn-plan btn-plan-outline" onclick="showPage('contact')">Get Started</button>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="pricing-faq">
-    <div class="section-label">Common Questions</div>
-    <h2>What you need <em>to know.</em></h2>
-    <div class="faq-grid">
-      <div class="faq-item"><h4>What does the retainer agreement include?</h4><p>Every plan includes a signed agreement that defines exact monthly deliverables, revision rights, response time SLAs, approval workflows, and cancellation terms. You will never wonder what you are paying for.</p></div>
-      <div class="faq-item"><h4>How do I cancel?</h4><p>Any plan can be cancelled with 30 days' written notice. There are no annual commitments, no early termination fees, and no penalty clauses. We earn your business every single month.</p></div>
-      <div class="faq-item"><h4>What happens in the first month?</h4><p>The first month begins with our discovery and audit process, followed by strategy development and your approval. Execution begins once the strategy is signed off. We do not rush to publish before the foundation is right.</p></div>
-      <div class="faq-item"><h4>Do ad spend costs come out of the retainer?</h4><p>No. The retainer covers our management and creative fees. Advertising spend (Google, Meta, etc.) is billed separately and goes directly to the platforms. We will recommend a budget during the strategy phase.</p></div>
-      <div class="faq-item"><h4>Can I upgrade or downgrade plans?</h4><p>Yes. You can move between plans with 30 days' notice. If your business needs change, we will adjust the engagement accordingly with a revised retainer agreement.</p></div>
-      <div class="faq-item"><h4>Who will I be working with?</h4><p>You will work directly with our founding team throughout the engagement. We do not delegate client relationships to junior staff. Your calls, messages, and approvals all go to the people doing the work.</p></div>
-    </div>
-  </div>
-
-  <footer>
-    <span class="f-logo" onclick="showPage('home')">Montoya<span>.</span></span>
-    <ul class="f-links">
-      <li><a onclick="showPage('about')">About</a></li>
-      <li><a onclick="showPage('services')">Services</a></li>
-      <li><a onclick="showPage('process')">Process</a></li>
-      <li><a onclick="showPage('pricing')">Retainers</a></li>
-      <li><a onclick="showPage('contact')">Contact</a></li>
-    </ul>
-    <div class="f-copy">&copy; 2025 Montoya Marketing Agency &middot; Bonsall, CA</div>
-  </footer>
-</div>
-
-<!-- ═══════════════════════════════════════
-     CONTACT PAGE
-════════════════════════════════════════ -->
-<div id="page-contact" class="page">
-  <div class="contact-page">
-    <div class="section-label" style="color:rgba(91,155,213,0.6);"><span style="background:rgba(91,155,213,0.4);width:28px;height:1px;display:block;"></span>Get In Touch</div>
-    <h2 class="light">Let's start a <em>conversation.</em></h2>
-    <p class="lead light">Tell us about your business and goals. We respond within one business day to schedule a discovery call.</p>
-
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div>
-          <div class="contact-detail-label">Email</div>
-          <div class="contact-detail-val"><a href="/cdn-cgi/l/email-protection#432e2c2d372c3a222e22312826372a2d24252a312e03242e222a2f6d202c2e"><span class="__cf_email__" data-cfemail="4a2725243e25332b272b38212f3e23242d2c2338270a2d272b232664292527">[email&#160;protected]</span></a></div>
-        </div>
-        <div>
-          <div class="contact-detail-label">Location</div>
-          <div class="contact-detail-val">Bonsall, California</div>
-        </div>
-        <div>
-          <div class="contact-detail-label">Response Time</div>
-          <div class="contact-detail-val">Within 1 business day</div>
-        </div>
-        <div>
-          <div class="contact-detail-label">Availability</div>
-          <div class="contact-detail-val">Currently accepting new clients</div>
-        </div>
-        <div class="contact-promise">
-          <p>Every inquiry receives a personal response from our team &mdash; not an automated acknowledgment. We take the time to understand your business before recommending any engagement.</p>
-        </div>
-      </div>
-
-      <form class="contact-form" id="contactForm">
-        <div class="form-row">
-          <div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" placeholder="Jane" required></div>
-          <div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" placeholder="Smith" required></div>
-        </div>
-        <div class="form-group"><label for="email">Business Email</label><input type="email" id="email" placeholder="jane@company.com" required></div>
-        <div class="form-group"><label for="company">Company Name</label><input type="text" id="company" placeholder="Acme Inc."></div>
-        <div class="form-group">
-          <label for="plan">Plan of Interest</label>
-          <select id="plan">
-            <option value="">Select a retainer plan</option>
-            <option value="starter">Starter &mdash; $850/mo</option>
-            <option value="growth">Growth &mdash; $1,000/mo (Most Popular)</option>
-            <option value="pro">Pro &mdash; $1,250/mo</option>
-            <option value="custom">Not sure yet &mdash; let's talk</option>
-          </select>
-        </div>
-        <div class="form-group"><label for="message">Tell us about your business &amp; goals</label><textarea id="message" placeholder="What does your business do, and what marketing challenges are you facing?"></textarea></div>
-        <div class="form-submit">
-          <button type="submit" class="btn-primary">Send Message &#8594;</button>
-          <span class="form-note">We respond within 1 business day.</span>
-        </div>
-        <div id="form-success">Thank you &mdash; your message has been received. We will be in touch within one business day.</div>
-      </form>
-    </div>
-  </div>
-
-  <footer style="background:#070504;">
-    <span class="f-logo" onclick="showPage('home')">Montoya<span>.</span></span>
-    <ul class="f-links">
-      <li><a onclick="showPage('about')">About</a></li>
-      <li><a onclick="showPage('services')">Services</a></li>
-      <li><a onclick="showPage('process')">Process</a></li>
-      <li><a onclick="showPage('pricing')">Retainers</a></li>
-      <li><a onclick="showPage('contact')">Contact</a></li>
-    </ul>
-    <div class="f-copy">&copy; 2025 Montoya Marketing Agency &middot; Bonsall, CA</div>
-  </footer>
-</div>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-function showPage(name) {
-  document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
-  document.getElementById('page-' + name).classList.add('active');
-  document.querySelectorAll('.nav-links a').forEach(function(a) {
-    a.classList.toggle('active', a.getAttribute('data-page') === name);
-  });
-  window.scrollTo(0, 0);
-  var hamburger = document.getElementById('hamburger');
-  var mobileMenu = document.getElementById('mobileMenu');
-  hamburger.classList.remove('open');
-  mobileMenu.classList.remove('open');
-}
-
-window.addEventListener('scroll', function() {
-  document.getElementById('nav').classList.toggle('stuck', window.scrollY > 10);
-});
-
-document.getElementById('hamburger').addEventListener('click', function() {
-  this.classList.toggle('open');
-  document.getElementById('mobileMenu').classList.toggle('open');
-});
-
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  var btn = this.querySelector('button[type="submit"]');
-  btn.textCo
+      <span class="ticker-item">Brand Strategy</span><span class="ticker-item">Paid Advertising</span><span class="ticker-item">SEO &
