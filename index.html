@@ -14,7 +14,7 @@
   --blue:#5B9BD5;--blue-dk:#3A78B5;--blue-lt:#D6E8F7;--blue-bg:#EBF4FB;
   --border:rgba(15,13,11,0.10);
 }
-html{font-size:16px;}
+html{font-size:16px;}h
 body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;line-height:1.65;-webkit-font-smoothing:antialiased;}
 ::-webkit-scrollbar{width:4px;}
 ::-webkit-scrollbar-track{background:var(--cream);}
@@ -733,12 +733,17 @@ footer{background:#0A0807;padding:2.5rem 5vw;display:flex;justify-content:space-
       var btn = form.querySelector('button[type="submit"]');
       btn.textContent = 'Sending...';
       btn.disabled = true;
-      setTimeout(function() {
-        var success = document.getElementById('form-success');
-        if (success) success.style.display = 'block';
-        btn.style.display = 'none';
-        form.reset();
-      }, 800);
+      fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } }).then(function(r) {
+        if (r.ok) {
+                        var success = document.getElementById('form-success');
+                        if (success) success.style.display = 'block';
+                        btn.style.display = 'none';
+                        form.reset();
+        } else {
+                        btn.textContent = 'Send Message →';
+                        btn.disabled = false;
+        }
+      });
     });
   }
 })();
