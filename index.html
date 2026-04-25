@@ -1,752 +1,1266 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Montoya Marketing Agency</title>
+
+<title>Copper Finch Marketing Agency</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
 :root{
+
   --ink:#0F0D0B;--ink-80:#2A2420;--ink-60:#4A433D;--ink-40:#7A726B;
+
   --ink-20:#B8B0A8;--ink-10:#DDD8D3;--ink-05:#F2EEEA;
+
   --cream:#FAF8F5;--white:#FFFFFF;--mocha:#5C3D2E;
-  --blue:#5B9BD5;--blue-dk:#3A78B5;--blue-lt:#D6E8F7;--blue-bg:#EBF4FB;
+
+  --blue:#B87333;--blue-dk:#9A5E2A;--blue-lt:#F0DCC8;--blue-bg:#FBF4ED;
+
   --border:rgba(15,13,11,0.10);
+
 }
-html{font-size:16px;}h
+
+html{font-size:16px;}
+
 body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;line-height:1.65;-webkit-font-smoothing:antialiased;}
+
 ::-webkit-scrollbar{width:4px;}
+
 ::-webkit-scrollbar-track{background:var(--cream);}
+
 ::-webkit-scrollbar-thumb{background:var(--ink-20);border-radius:2px;}
 
+
+
 /* NAV */
+
 #nav{position:fixed;top:0;left:0;right:0;z-index:500;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(250,248,245,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:box-shadow .3s;}
+
 #nav.stuck{box-shadow:0 2px 24px rgba(15,13,11,0.07);}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--ink);text-decoration:none;letter-spacing:0.04em;}
+
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--ink);text-decoration:none;letter-spacing:0.04em;display:inline-flex;align-items:center;gap:0.5rem;background:none;border:none;cursor:pointer;}
+
 .nav-logo span{color:var(--blue);}
+
 .nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none;}
+
 .nav-btn{text-decoration:none;font-size:0.8rem;font-weight:500;color:var(--ink-60);letter-spacing:0.07em;text-transform:uppercase;transition:color .2s;background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;padding:0;}
+
 .nav-btn:hover{color:var(--ink);}
+
 .nav-btn.active{color:var(--ink);border-bottom:1.5px solid var(--blue);padding-bottom:2px;}
+
 .nav-cta-btn{background:var(--ink);color:var(--cream);padding:0.6rem 1.4rem;border-radius:2px;font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;border:none;cursor:pointer;transition:background .2s;}
+
 .nav-cta-btn:hover{background:var(--mocha);}
+
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+
 .hamburger span{display:block;width:24px;height:1.5px;background:var(--ink);transition:all .3s;}
+
 .hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+
 .hamburger.open span:nth-child(2){opacity:0;}
+
 .hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+
 .mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;bottom:0;background:var(--cream);z-index:400;padding:3rem 5vw;flex-direction:column;gap:0;overflow-y:auto;}
+
 .mobile-menu.open{display:flex;}
+
 .mobile-nav-btn{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--ink);background:none;border:none;border-bottom:1px solid var(--border);padding:1.25rem 0;cursor:pointer;text-align:left;width:100%;}
+
 .mobile-cta-btn{font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--cream);text-align:center;padding:1rem;border-radius:2px;margin-top:1.5rem;border:none;cursor:pointer;width:100%;}
 
+
+
 /* PAGE SYSTEM */
+
 .page{display:none;min-height:100vh;padding-top:72px;}
+
 .page.active{display:block;animation:fadeIn .3s ease;}
+
 @keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
 
+
+
 /* SHARED */
+
 .section{padding:6rem 5vw;}
+
 .sec-dark{background:var(--ink);}
+
 .sec-white{background:var(--white);}
+
 .sec-tint{background:var(--cream);}
+
 .section-label{display:inline-flex;align-items:center;gap:0.75rem;font-size:0.7rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--blue);margin-bottom:1.25rem;}
+
 .section-label::before{content:'';display:block;width:28px;height:1px;background:var(--blue);}
-.section-label.lt{color:rgba(91,155,213,0.7);}
-.section-label.lt::before{background:rgba(91,155,213,0.5);}
+
+.section-label.lt{color:rgba(184,115,51,0.7);}
+
+.section-label.lt::before{background:rgba(184,115,51,0.5);}
+
 h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5.5vw,5.5rem);font-weight:600;line-height:1.05;color:var(--ink);margin-bottom:1.75rem;letter-spacing:-0.01em;}
+
 h1 em{font-style:italic;color:var(--mocha);}
+
 h1.lt{color:var(--cream);}
+
 h1.lt em{color:var(--blue);}
+
 h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3.4rem);font-weight:600;line-height:1.1;color:var(--ink);margin-bottom:1.25rem;letter-spacing:-0.01em;}
+
 h2 em{font-style:italic;color:var(--mocha);}
+
 h2.lt{color:var(--cream);}
+
 h2.lt em{color:var(--blue);}
+
 h3{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--ink);margin-bottom:0.6rem;}
+
 .lead{font-size:1.05rem;font-weight:300;color:var(--ink-60);line-height:1.8;max-width:560px;}
+
 .lead.lt{color:rgba(250,248,245,0.6);}
 
+
+
 /* BUTTONS */
+
 .btn-p{display:inline-flex;align-items:center;gap:0.6rem;background:var(--ink);color:var(--cream);font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2rem;border-radius:2px;border:none;cursor:pointer;transition:background .2s,transform .15s;}
+
 .btn-p:hover{background:var(--mocha);transform:translateY(-1px);}
+
 .btn-g{display:inline-flex;align-items:center;gap:0.6rem;background:transparent;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:0.9rem 2rem;border-radius:2px;border:1px solid var(--ink-20);cursor:pointer;transition:all .2s;}
+
 .btn-g:hover{border-color:var(--ink);background:var(--ink-05);}
+
 .btn-b{display:inline-flex;align-items:center;gap:0.6rem;background:var(--blue);color:var(--white);font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 2rem;border-radius:2px;border:none;cursor:pointer;transition:background .2s,transform .15s;}
+
 .btn-b:hover{background:var(--blue-dk);transform:translateY(-1px);}
+
 .btn-plan{display:block;width:100%;text-align:center;font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:0.85rem;border-radius:2px;cursor:pointer;transition:all .2s;}
+
 .btn-plan-o{background:transparent;color:var(--ink);border:1px solid var(--ink-20);}
+
 .btn-plan-o:hover{background:var(--ink);color:var(--cream);border-color:var(--ink);}
+
 .btn-plan-s{background:var(--blue);color:var(--white);border:none;}
+
 .btn-plan-s:hover{background:var(--blue-dk);transform:translateY(-1px);}
 
+
+
 /* TICKER */
+
 .ticker{background:var(--ink);padding:0.9rem 0;overflow:hidden;}
+
 .ticker-track{display:flex;animation:ticker 30s linear infinite;white-space:nowrap;}
+
 .ticker-item{display:inline-flex;align-items:center;font-size:0.72rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-20);flex-shrink:0;padding:0 2.5rem;}
+
 .ticker-item::after{content:'';display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--blue);margin-left:2.5rem;}
+
 @keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
+
+
 /* FOOTER */
+
 footer{background:#0A0807;padding:2.5rem 5vw;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;border-top:1px solid rgba(255,255,255,0.04);}
+
 .f-logo{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:rgba(250,248,245,0.6);letter-spacing:0.04em;background:none;border:none;cursor:pointer;}
+
 .f-logo span{color:var(--blue);}
+
 .f-links{display:flex;gap:2rem;list-style:none;flex-wrap:wrap;}
+
 .f-link-btn{background:none;border:none;cursor:pointer;font-size:0.73rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:rgba(250,248,245,0.25);transition:color .2s;font-family:'DM Sans',sans-serif;}
+
 .f-link-btn:hover{color:rgba(250,248,245,0.6);}
+
 .f-copy{font-size:0.73rem;color:rgba(250,248,245,0.18);}
 
+
+
 /* ── HOME ── */
+
 .hero{min-height:calc(100vh - 72px);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:4rem 5vw;gap:6rem;position:relative;}
+
 .hero-rule{position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--border) 20%,var(--border) 80%,transparent);}
+
 .hero-kicker{display:inline-flex;align-items:center;gap:0.75rem;font-size:0.72rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--blue);margin-bottom:2rem;}
+
 .hero-kicker::before{content:'';display:block;width:32px;height:1px;background:var(--blue);}
+
 .hero-actions{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;margin-top:2rem;}
+
 .hero-trust{display:flex;align-items:center;gap:1rem;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);flex-wrap:wrap;}
+
 .trust-item{display:flex;flex-direction:column;gap:0.2rem;}
+
 .trust-val{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:var(--ink);line-height:1;}
+
 .trust-lbl{font-size:0.7rem;font-weight:500;color:var(--ink-40);letter-spacing:0.1em;text-transform:uppercase;}
+
 .trust-sep{width:1px;height:40px;background:var(--border);}
+
 .hero-right{display:flex;flex-direction:column;gap:1px;border:1px solid var(--border);border-radius:4px;overflow:hidden;}
+
 .metric-card{padding:2rem 2.25rem;background:var(--white);border-bottom:1px solid var(--border);transition:background .2s;}
+
 .metric-card:last-child{border-bottom:none;}
+
 .metric-card:hover{background:var(--blue-bg);}
+
 .mc-label{font-size:0.68rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-40);margin-bottom:0.5rem;}
+
 .mc-val{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--ink);line-height:1;margin-bottom:0.3rem;}
+
 .mc-desc{font-size:0.82rem;color:var(--ink-60);font-weight:300;}
+
 .home-svcs{padding:5rem 5vw;background:var(--white);}
+
 .home-svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden;margin-top:3rem;}
+
 .home-svc-card{background:var(--white);padding:2rem;cursor:pointer;transition:background .2s;position:relative;overflow:hidden;border:none;text-align:left;font-family:'DM Sans',sans-serif;}
+
 .home-svc-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+
 .home-svc-card:hover{background:var(--blue-bg);}
+
 .home-svc-card:hover::after{transform:scaleX(1);}
+
 .hsvc-num{font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-20);margin-bottom:1rem;display:block;}
+
 .hsvc-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--ink);margin-bottom:0.4rem;display:block;}
+
 .hsvc-desc{font-size:0.82rem;color:var(--ink-60);font-weight:300;line-height:1.6;display:block;}
+
 .home-svc-footer{display:flex;justify-content:flex-end;margin-top:2rem;}
+
 .home-why{padding:5rem 5vw;background:var(--ink);}
+
 .home-why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3rem;margin-top:3.5rem;}
+
 .hw-num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:600;color:var(--blue);opacity:0.5;line-height:1;margin-bottom:0.75rem;}
+
 .hw-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--cream);margin-bottom:0.5rem;display:block;}
+
 .hw-desc{font-size:0.83rem;color:rgba(250,248,245,0.45);font-weight:300;line-height:1.65;display:block;}
 
+
+
 /* ── ABOUT ── */
+
 .about-hero{padding:5rem 5vw;background:var(--ink);}
+
 .about-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:end;padding-bottom:1rem;}
+
 .a-row{display:flex;align-items:center;gap:2rem;padding:2rem 0;border-bottom:1px solid rgba(255,255,255,0.07);}
+
 .a-row:first-child{padding-top:0;}
+
 .a-row:last-child{border-bottom:none;}
+
 .a-number{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:600;color:var(--blue);line-height:1;min-width:100px;text-align:center;}
+
 .a-title{font-size:0.95rem;font-weight:600;color:var(--cream);margin-bottom:0.3rem;display:block;}
+
 .a-desc{font-size:0.85rem;color:rgba(250,248,245,0.45);font-weight:300;line-height:1.65;display:block;}
+
 .about-values{padding:5rem 5vw;background:var(--cream);}
+
 .av-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden;margin-top:3rem;}
+
 .av-card{background:var(--white);padding:2.5rem;transition:background .2s;}
+
 .av-card:hover{background:var(--blue-bg);}
+
 .av-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--blue);opacity:0.35;line-height:1;margin-bottom:1rem;}
+
 .av-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--ink);margin-bottom:0.5rem;display:block;}
+
 .av-desc{font-size:0.85rem;color:var(--ink-60);font-weight:300;line-height:1.7;display:block;}
+
 .about-mission{padding:5rem 5vw;background:var(--white);}
+
 .mission-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
+
 .mission-quote{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-style:italic;font-weight:400;color:var(--ink);line-height:1.5;padding-left:2rem;border-left:2px solid var(--blue);}
 
+
+
 /* ── SERVICES ── */
+
 .svc-hero{padding:5rem 5vw 3rem;background:var(--white);}
+
 .svc-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:end;}
+
 .svc-full-grid{padding:0 5vw 5rem;background:var(--white);display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+
 .svc-card{background:var(--cream);border:1px solid var(--border);border-radius:4px;padding:2.5rem;position:relative;overflow:hidden;transition:box-shadow .25s,transform .25s;}
+
 .svc-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--blue);transform:scaleY(0);transform-origin:top;transition:transform .35s;}
+
 .svc-card:hover{box-shadow:0 8px 32px rgba(15,13,11,0.07);transform:translateY(-2px);}
+
 .svc-card:hover::before{transform:scaleY(1);}
+
 .svc-icon{width:48px;height:48px;background:var(--blue-bg);border-radius:3px;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;}
+
 .svc-icon svg{width:22px;height:22px;}
+
 .svc-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:1.25rem;}
+
 .tag{font-size:0.68rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;background:var(--blue-lt);color:var(--blue-dk);padding:0.25rem 0.65rem;border-radius:2px;}
+
 .platform-row{display:flex;align-items:center;gap:0.75rem;margin-top:1rem;padding:0.65rem 0.9rem;background:var(--white);border-radius:3px;border:1px solid var(--border);}
+
 .svc-cta{padding:0 5vw 5rem;background:var(--white);text-align:center;}
 
+
+
 /* ── PROCESS ── */
+
 .proc-hero{padding:5rem 5vw 3rem;background:var(--cream);}
+
 .proc-list{padding:0 5vw 5rem;background:var(--cream);}
+
 .proc-item{display:grid;grid-template-columns:80px 1fr;gap:3rem;align-items:flex-start;padding:3rem 0;border-bottom:1px solid var(--border);}
+
 .proc-item:last-child{border-bottom:none;}
+
 .proc-num{font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:600;color:var(--ink-10);line-height:1;}
+
 .proc-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--ink);margin-bottom:0.75rem;display:block;}
+
 .proc-desc{font-size:0.9rem;color:var(--ink-60);line-height:1.8;font-weight:300;max-width:580px;display:block;}
+
 .proc-note{display:inline-flex;align-items:center;gap:0.5rem;margin-top:1rem;font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);}
+
 .proc-cta{padding:5rem 5vw;background:var(--ink);text-align:center;}
 
+
+
 /* ── PRICING ── */
+
 .price-hero{padding:5rem 5vw 3rem;background:var(--white);}
+
 .price-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:end;}
+
 .price-note{font-size:0.82rem;color:var(--ink-40);font-style:italic;margin-top:0.5rem;}
+
 .price-plans{padding:0 5vw 5rem;background:var(--white);}
+
 .plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:0.5rem;}
+
 .plan{background:var(--cream);border:1px solid var(--border);border-radius:4px;padding:2.5rem;display:flex;flex-direction:column;transition:box-shadow .25s,transform .25s;}
+
 .plan:hover{box-shadow:0 12px 40px rgba(15,13,11,0.08);transform:translateY(-3px);}
+
 .plan.feat{background:var(--ink);border-color:var(--ink);}
+
 .plan-bar{height:3px;background:var(--border);border-radius:2px 2px 0 0;margin:-2.5rem -2.5rem 2.5rem;}
+
 .plan:hover .plan-bar,.plan.feat .plan-bar{background:var(--blue);}
+
 .plan-tag{font-size:0.68rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-40);margin-bottom:1rem;}
+
 .plan.feat .plan-tag{color:rgba(250,248,245,0.4);}
+
 .plan-price{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:600;color:var(--ink);line-height:1;margin-bottom:0.25rem;}
+
 .plan.feat .plan-price{color:var(--cream);}
+
 .plan-price sup{font-size:1.4rem;vertical-align:super;}
+
 .plan-per{font-size:0.8rem;color:var(--ink-40);margin-bottom:0.5rem;}
+
 .plan.feat .plan-per{color:rgba(250,248,245,0.4);}
-.plan-badge{display:inline-block;font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);background:rgba(91,155,213,0.12);padding:0.25rem 0.65rem;border-radius:2px;margin-bottom:1.5rem;}
+
+.plan-badge{display:inline-block;font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);background:rgba(184,115,51,0.12);padding:0.25rem 0.65rem;border-radius:2px;margin-bottom:1.5rem;}
+
 .plan-div{height:1px;background:var(--border);margin:0 0 1.5rem;}
+
 .plan.feat .plan-div{background:rgba(255,255,255,0.1);}
+
 .plan-desc{font-size:0.85rem;color:var(--ink-60);font-weight:300;line-height:1.65;margin-bottom:1.75rem;flex-shrink:0;}
+
 .plan.feat .plan-desc{color:rgba(250,248,245,0.5);}
+
 .plan-feats{list-style:none;display:flex;flex-direction:column;gap:0.8rem;margin-bottom:2rem;flex:1;}
+
 .plan-feat{display:flex;align-items:flex-start;gap:0.75rem;font-size:0.85rem;color:var(--ink-80);}
+
 .plan.feat .plan-feat{color:rgba(250,248,245,0.8);}
-.chk{width:16px;height:16px;border-radius:50%;background:rgba(91,155,213,0.15);border:1px solid rgba(91,155,213,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+
+.chk{width:16px;height:16px;border-radius:50%;background:rgba(184,115,51,0.15);border:1px solid rgba(184,115,51,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+
 .chk svg{width:8px;height:8px;}
+
 .plan-contract{font-size:0.75rem;color:var(--ink-40);font-style:italic;margin-bottom:1.5rem;padding:0.75rem;background:rgba(15,13,11,0.03);border-radius:3px;border-left:2px solid var(--blue);}
+
 .plan.feat .plan-contract{background:rgba(255,255,255,0.05);color:rgba(250,248,245,0.35);}
+
 .price-faq{padding:5rem 5vw;background:var(--cream);}
+
 .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem;}
+
 .faq-card{padding:2rem;background:var(--white);border-radius:4px;border:1px solid var(--border);}
+
 .faq-q{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--ink);margin-bottom:0.6rem;display:block;}
+
 .faq-a{font-size:0.85rem;color:var(--ink-60);font-weight:300;line-height:1.7;display:block;}
 
+
+
 /* ── CONTACT ── */
+
 .contact-wrap{padding:5rem 5vw;background:var(--ink);min-height:calc(100vh - 72px);}
+
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;margin-top:4rem;}
+
 .cd-label{font-size:0.68rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(250,248,245,0.3);margin-bottom:0.3rem;display:block;}
+
 .cd-val{font-size:1rem;color:var(--cream);display:block;}
+
 .cd-val a{color:var(--blue);text-decoration:none;}
+
 .cd-val a:hover{text-decoration:underline;}
+
 .contact-detail{margin-bottom:1.5rem;}
+
 .contact-promise{margin-top:1rem;padding:1.5rem;background:rgba(255,255,255,0.04);border-radius:4px;border-left:2px solid var(--blue);}
+
 .contact-promise p{font-size:0.85rem;color:rgba(250,248,245,0.45);font-weight:300;line-height:1.7;}
+
 .contact-form{display:flex;flex-direction:column;gap:1.25rem;}
+
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;}
+
 .form-group{display:flex;flex-direction:column;gap:0.5rem;}
+
 .form-group label{font-size:0.7rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:rgba(250,248,245,0.4);}
+
 .form-group input,.form-group select,.form-group textarea{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:3px;padding:0.85rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.9rem;color:var(--cream);transition:border-color .2s;outline:none;}
+
 .form-group input::placeholder,.form-group textarea::placeholder{color:rgba(250,248,245,0.2);}
+
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--blue);background:rgba(255,255,255,0.08);}
+
 .form-group select{appearance:none;cursor:pointer;}
+
 .form-group select option{background:#2A2420;color:var(--cream);}
+
 .form-group textarea{resize:vertical;min-height:130px;}
+
 .form-submit{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;margin-top:0.5rem;}
+
 .form-note-txt{font-size:0.78rem;color:rgba(250,248,245,0.3);}
-#form-success{display:none;padding:1rem 1.25rem;background:rgba(91,155,213,0.12);border:1px solid rgba(91,155,213,0.3);border-radius:3px;color:var(--blue);font-size:0.85rem;}
+
+#form-success{display:none;padding:1rem 1.25rem;background:rgba(184,115,51,0.12);border:1px solid rgba(184,115,51,0.3);border-radius:3px;color:var(--blue);font-size:0.85rem;}
+
+
 
 /* RESPONSIVE */
+
 @media(max-width:960px){
+
   .nav-links{display:none;}.hamburger{display:flex;}
+
   .hero,.about-hero-grid,.av-grid,.mission-grid,.svc-hero-grid,.svc-full-grid,
+
   .price-hero-grid,.plan-grid,.contact-grid,.faq-grid,.home-why-grid{grid-template-columns:1fr;gap:2.5rem;}
+
   .hero{min-height:auto;padding:3rem 5vw;}
+
   .proc-item{grid-template-columns:50px 1fr;gap:1.5rem;}
+
   .home-svc-grid{grid-template-columns:1fr;}
+
 }
+
 </style>
+
 </head>
+
 <body>
 
+
+
 <!-- NAV -->
+
 <nav id="nav">
-  <button class="nav-logo" data-nav="home">Montoya<span>.</span></button>
+
+  <button class="nav-logo" data-nav="home">Copper Finch<span>.</span></button>
+
   <ul class="nav-links">
+
     <li><button class="nav-btn" data-nav="home">Home</button></li>
+
     <li><button class="nav-btn" data-nav="about">About</button></li>
+
     <li><button class="nav-btn" data-nav="services">Services</button></li>
+
     <li><button class="nav-btn" data-nav="process">Process</button></li>
-    <li><button class="nav-btn" data-nav="pricing">Retainers</button></li>
+
     <li><button class="nav-cta-btn" data-nav="contact">Contact Us</button></li>
+
   </ul>
+
   <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+
 </nav>
 
+
+
 <!-- MOBILE MENU -->
+
 <div class="mobile-menu" id="mobileMenu">
+
   <button class="mobile-nav-btn" data-nav="home">Home</button>
+
   <button class="mobile-nav-btn" data-nav="about">About</button>
+
   <button class="mobile-nav-btn" data-nav="services">Services</button>
+
   <button class="mobile-nav-btn" data-nav="process">Process</button>
-  <button class="mobile-nav-btn" data-nav="pricing">Retainers</button>
+
   <button class="mobile-cta-btn" data-nav="contact">Contact Us</button>
+
 </div>
+
+
 
 <!-- ══════════════ HOME ══════════════ -->
+
 <div id="page-home" class="page active">
+
   <div class="hero">
+
     <div class="hero-rule"></div>
+
     <div>
+
       <div class="hero-kicker">Strategic Marketing Partners</div>
+
       <h1>Growth that <em>compounds.</em><br>Results that last.</h1>
-      <p class="lead">Montoya Marketing Agency partners with ambitious businesses to build and execute marketing strategies that generate measurable, sustained growth.</p>
+
+      <p class="lead">Copper Finch partners with ambitious businesses to build and execute marketing strategies that generate measurable, sustained growth.</p>
+
       <div class="hero-actions">
+
         <button class="btn-p" data-nav="contact">Start a Conversation</button>
+
         <button class="btn-g" data-nav="services">View Services</button>
+
       </div>
+
       <div class="hero-trust">
+
         <div class="trust-item"><span class="trust-val">100%</span><span class="trust-lbl">Senior-led work</span></div>
+
         <div class="trust-sep"></div>
+
         <div class="trust-item"><span class="trust-val">24hr</span><span class="trust-lbl">Response time</span></div>
+
         <div class="trust-sep"></div>
+
         <div class="trust-item"><span class="trust-val">&#8734;</span><span class="trust-lbl">Revisions included</span></div>
+
         <div class="trust-sep"></div>
+
         <div class="trust-item"><span class="trust-val">30d</span><span class="trust-lbl">Cancel notice</span></div>
+
       </div>
+
     </div>
+
     <div class="hero-right">
+
       <div class="metric-card"><div class="mc-label">Engagement Model</div><div class="mc-val">Monthly Retainer</div><div class="mc-desc">Predictable investment, consistent delivery, and a partnership built for the long term.</div></div>
+
       <div class="metric-card"><div class="mc-label">Contract Terms</div><div class="mc-val">30-Day Notice</div><div class="mc-desc">No annual lock-ins. Cancel with 30 days' written notice &mdash; we earn your business every month.</div></div>
+
       <div class="metric-card"><div class="mc-label">Account Management</div><div class="mc-val">Founder-Led</div><div class="mc-desc">You work directly with the principals of the agency &mdash; no handoffs, no account executives.</div></div>
+
       <div class="metric-card"><div class="mc-label">Location</div><div class="mc-val">Bonsall, CA</div><div class="mc-desc">Serving clients locally and nationwide with the same standard of excellence.</div></div>
+
     </div>
+
   </div>
+
+
 
   <div class="ticker">
+
     <div class="ticker-track">
+
       <span class="ticker-item">Brand Strategy</span><span class="ticker-item">Paid Advertising</span><span class="ticker-item">SEO &amp; Content</span><span class="ticker-item">Social Media</span><span class="ticker-item">Email Marketing</span><span class="ticker-item">Analytics</span><span class="ticker-item">Conversion Optimization</span><span class="ticker-item">Lead Generation</span><span class="ticker-item">Brand Strategy</span><span class="ticker-item">Paid Advertising</span><span class="ticker-item">SEO &amp; Content</span><span class="ticker-item">Social Media</span><span class="ticker-item">Email Marketing</span><span class="ticker-item">Analytics</span><span class="ticker-item">Conversion Optimization</span><span class="ticker-item">Lead Generation</span>
+
     </div>
+
   </div>
+
+
 
   <div class="home-svcs">
+
     <div class="section-label">What We Deliver</div>
+
     <h2>Integrated services.<br><em>One partner.</em></h2>
+
     <div class="home-svc-grid">
+
       <button class="home-svc-card" data-nav="services"><span class="hsvc-num">01</span><span class="hsvc-title">Brand Strategy &amp; Identity</span><span class="hsvc-desc">Positioning and visual identity systems that communicate authority.</span></button>
+
       <button class="home-svc-card" data-nav="services"><span class="hsvc-num">02</span><span class="hsvc-title">Social Media Management</span><span class="hsvc-desc">Content strategy and execution across the platforms that matter.</span></button>
+
       <button class="home-svc-card" data-nav="services"><span class="hsvc-num">03</span><span class="hsvc-title">Paid Advertising</span><span class="hsvc-desc">ROI-focused campaigns on Google and Meta engineered for growth.</span></button>
+
       <button class="home-svc-card" data-nav="services"><span class="hsvc-num">04</span><span class="hsvc-title">SEO &amp; Content Marketing</span><span class="hsvc-desc">Long-horizon organic growth through technical SEO and content.</span></button>
+
       <button class="home-svc-card" data-nav="services"><span class="hsvc-num">05</span><span class="hsvc-title">Email &amp; Automation</span><span class="hsvc-desc">Lifecycle programs and workflows that nurture and convert.</span></button>
+
       <button class="home-svc-card" data-nav="services"><span class="hsvc-num">06</span><span class="hsvc-title">Analytics &amp; Reporting</span><span class="hsvc-desc">Executive-level monthly reports that drive business decisions.</span></button>
+
     </div>
+
     <div class="home-svc-footer"><button class="btn-g" data-nav="services">View All Services &#8594;</button></div>
+
   </div>
+
+
 
   <div class="home-why">
-    <div class="section-label lt">Why Montoya</div>
+
+    <div class="section-label lt">Why Copper Finch</div>
+
     <h2 class="lt">The advantage of <em>choosing new.</em></h2>
+
     <div class="home-why-grid">
+
       <div><div class="hw-num">01</div><span class="hw-title">You are not a number here</span><span class="hw-desc">We deliberately limit client volume so every account receives senior-level attention.</span></div>
+
       <div><div class="hw-num">02</div><span class="hw-title">No recycled playbooks</span><span class="hw-desc">Every strategy is built from scratch for your specific business and competitive environment.</span></div>
+
       <div><div class="hw-num">03</div><span class="hw-title">Contractual accountability</span><span class="hw-desc">Retainer agreements define exact deliverables, timelines, and revision rights.</span></div>
+
       <div><div class="hw-num">04</div><span class="hw-title">We earn the renewal monthly</span><span class="hw-desc">With only 30 days' notice to cancel, we are structurally incentivized to perform.</span></div>
+
     </div>
+
   </div>
 
+
+
   <footer>
-    <button class="f-logo" data-nav="home">Montoya<span>.</span></button>
+
+    <button class="f-logo" data-nav="home">Copper Finch<span>.</span></button>
+
     <ul class="f-links">
+
       <li><button class="f-link-btn" data-nav="about">About</button></li>
+
       <li><button class="f-link-btn" data-nav="services">Services</button></li>
+
       <li><button class="f-link-btn" data-nav="process">Process</button></li>
-      <li><button class="f-link-btn" data-nav="pricing">Retainers</button></li>
+
+
       <li><button class="f-link-btn" data-nav="contact">Contact</button></li>
+
     </ul>
-    <div class="f-copy">&copy; 2025 Montoya Marketing Agency &middot; Bonsall, CA</div>
+
+    <div class="f-copy">&copy; 2025 Copper Finch &middot; Bonsall, CA</div>
+
   </footer>
+
 </div>
+
+
 
 <!-- ══════════════ ABOUT ══════════════ -->
+
 <div id="page-about" class="page">
+
   <div class="about-hero">
+
     <div class="section-label lt">Who We Are</div>
+
     <div class="about-hero-grid">
+
       <div>
+
         <h1 class="lt">Built different.<br><em>By design.</em></h1>
+
         <p class="lead lt">We are a boutique marketing agency that trades volume for precision. Every client receives the focus and expertise that only a selective partnership model can deliver.</p>
+
       </div>
+
       <div>
+
         <div class="a-row"><div class="a-number">100%</div><div><span class="a-title">Founder-Led on Every Account</span><span class="a-desc">You work directly with the principals of the agency &mdash; not a rotating roster of account managers.</span></div></div>
+
         <div class="a-row"><div class="a-number">&#8734;</div><div><span class="a-title">Revisions Until It Is Right</span><span class="a-desc">We do not invoice our confidence. Every deliverable is refined until it meets the standard we both expect.</span></div></div>
+
       </div>
+
     </div>
+
   </div>
+
+
 
   <div class="about-values">
+
     <div class="section-label">Our Principles</div>
+
     <h2>What we believe.<br><em>How we operate.</em></h2>
+
     <div class="av-grid">
+
       <div class="av-card"><div class="av-num">01</div><span class="av-title">Results Over Optics</span><span class="av-desc">We measure every engagement by revenue impact, lead quality, and growth metrics &mdash; not impressions or follower counts.</span></div>
+
       <div class="av-card"><div class="av-num">02</div><span class="av-title">Strategy Before Execution</span><span class="av-desc">Every campaign begins with deep market research and a documented strategy. We never execute blindly.</span></div>
+
       <div class="av-card"><div class="av-num">03</div><span class="av-title">Radical Transparency</span><span class="av-desc">Monthly reporting covers what worked, what did not, and exactly where every dollar was allocated.</span></div>
+
       <div class="av-card"><div class="av-num">04</div><span class="av-title">Long-Term Thinking</span><span class="av-desc">We build marketing systems designed to compound over time, not campaigns optimized for a single quarter.</span></div>
+
     </div>
+
   </div>
+
+
 
   <div class="about-mission">
+
     <div class="mission-grid">
+
       <div>
+
         <div class="section-label">Our Mission</div>
+
         <h2>A different kind of <em>agency.</em></h2>
-        <p class="lead" style="margin-bottom:2rem;">Montoya Marketing Agency was founded on the conviction that most businesses deserve better than the impersonal, template-driven service they receive from large agencies.</p>
+
+        <p class="lead" style="margin-bottom:2rem;">Copper Finch was founded on the conviction that most businesses deserve better than the impersonal, template-driven service they receive from large agencies.</p>
+
         <p class="lead">We built a firm where every client relationship is treated as a true partnership &mdash; with shared goals, shared accountability, and work we are genuinely proud of.</p>
+
         <div style="margin-top:2.5rem;"><button class="btn-p" data-nav="contact">Work With Us</button></div>
+
       </div>
+
       <div>
+
         <p class="mission-quote">"We retain clients because of the results we deliver &mdash; not because of the contracts we write."</p>
-        <p style="margin-top:1.5rem;font-size:0.82rem;color:var(--ink-40);font-style:italic;">The Montoya Standard</p>
+
+        <p style="margin-top:1.5rem;font-size:0.82rem;color:var(--ink-40);font-style:italic;">The Copper Finch Standard</p>
+
       </div>
+
     </div>
+
   </div>
+
+
 
   <footer>
-    <button class="f-logo" data-nav="home">Montoya<span>.</span></button>
+
+    <button class="f-logo" data-nav="home">Copper Finch<span>.</span></button>
+
     <ul class="f-links">
+
       <li><button class="f-link-btn" data-nav="about">About</button></li>
+
       <li><button class="f-link-btn" data-nav="services">Services</button></li>
+
       <li><button class="f-link-btn" data-nav="process">Process</button></li>
-      <li><button class="f-link-btn" data-nav="pricing">Retainers</button></li>
+
+
       <li><button class="f-link-btn" data-nav="contact">Contact</button></li>
+
     </ul>
-    <div class="f-copy">&copy; 2025 Montoya Marketing Agency &middot; Bonsall, CA</div>
+
+    <div class="f-copy">&copy; 2025 Copper Finch &middot; Bonsall, CA</div>
+
   </footer>
+
 </div>
 
+
+
 <!-- ══════════════ SERVICES ══════════════ -->
+
 <div id="page-services" class="page">
+
   <div class="svc-hero">
+
     <div class="svc-hero-grid">
+
       <div><div class="section-label">What We Deliver</div><h2>Integrated services.<br><em>One partner.</em></h2></div>
+
       <p class="lead">Every service is designed to work as part of a unified strategy &mdash; not as isolated tactics deployed in silos.</p>
+
     </div>
+
   </div>
+
+
 
   <div class="svc-full-grid">
+
     <div class="svc-card">
+
       <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-dk)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+
       <h3>Brand Strategy &amp; Identity</h3>
+
       <p class="lead" style="font-size:0.85rem;max-width:100%;">Positioning, messaging architecture, and visual identity systems that communicate authority and build lasting market recognition.</p>
+
       <div class="svc-tags"><span class="tag">Positioning</span><span class="tag">Messaging</span><span class="tag">Visual Identity</span><span class="tag">Brand Guidelines</span></div>
+
     </div>
 
+
+
     <div class="svc-card">
+
       <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-dk)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div>
+
       <h3>Social Media Management</h3>
+
       <p class="lead" style="font-size:0.85rem;max-width:100%;">Content strategy and consistent execution across the platforms that matter to your audience. We build real communities and convert followers into loyal customers.</p>
+
       <div class="platform-row">
+
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="#1877F2"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.532-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.269h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22"><rect width="24" height="24" rx="5" fill="#d62976"/><rect x="2.5" y="2.5" width="19" height="19" rx="4" fill="none" stroke="white" stroke-width="1.4"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="white" stroke-width="1.4"/><circle cx="17.2" cy="6.8" r="1.1" fill="white"/></svg>
+
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+
       </div>
+
       <div class="svc-tags"><span class="tag">Content Creation</span><span class="tag">Community</span><span class="tag">Scheduling</span></div>
+
     </div>
 
+
+
     <div class="svc-card">
+
       <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-dk)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
+
       <h3>Paid Advertising</h3>
+
       <p class="lead" style="font-size:0.85rem;max-width:100%;">ROI-focused campaigns engineered for efficient customer acquisition. We manage spend intelligently across the platforms where your customers are actively searching.</p>
+
       <div class="platform-row">
+
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+
         <span style="font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;color:#0082FB;">Meta</span>
+
       </div>
+
       <div class="svc-tags"><span class="tag">Google Ads</span><span class="tag">Meta Ads</span><span class="tag">Retargeting</span><span class="tag">Audience Strategy</span></div>
+
     </div>
 
+
+
     <div class="svc-card">
+
       <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-dk)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+
       <h3>SEO &amp; Content Marketing</h3>
+
       <p class="lead" style="font-size:0.85rem;max-width:100%;">Long-horizon organic growth through technical SEO, authoritative content strategy, and strategic link development. We build visibility that compounds month over month.</p>
+
       <div class="svc-tags"><span class="tag">Technical SEO</span><span class="tag">Content Strategy</span><span class="tag">Link Building</span><span class="tag">Keyword Research</span></div>
+
     </div>
 
+
+
     <div class="svc-card">
+
       <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-dk)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+
       <h3>Email &amp; Marketing Automation</h3>
+
       <p class="lead" style="font-size:0.85rem;max-width:100%;">Lifecycle email programs and automation workflows that nurture prospects and drive repeat revenue. Your list becomes a reliable, scalable revenue channel.</p>
+
       <div class="svc-tags"><span class="tag">Klaviyo</span><span class="tag">Mailchimp</span><span class="tag">Drip Sequences</span><span class="tag">Automation</span></div>
+
     </div>
 
+
+
     <div class="svc-card">
+
       <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-dk)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+
       <h3>Analytics &amp; Performance Reporting</h3>
+
       <p class="lead" style="font-size:0.85rem;max-width:100%;">Executive-level monthly reports that translate campaign data into clear business decisions. We track what matters and present it in a way that drives action.</p>
+
       <div class="svc-tags"><span class="tag">GA4</span><span class="tag">Custom Dashboards</span><span class="tag">KPI Tracking</span><span class="tag">Monthly Reports</span></div>
+
     </div>
+
   </div>
+
+
 
   <div class="svc-cta"><button class="btn-p" data-nav="contact">Discuss Your Needs &#8594;</button></div>
 
+
+
   <footer>
-    <button class="f-logo" data-nav="home">Montoya<span>.</span></button>
+
+    <button class="f-logo" data-nav="home">Copper Finch<span>.</span></button>
+
     <ul class="f-links">
+
       <li><button class="f-link-btn" data-nav="about">About</button></li>
+
       <li><button class="f-link-btn" data-nav="services">Services</button></li>
+
       <li><button class="f-link-btn" data-nav="process">Process</button></li>
-      <li><button class="f-link-btn" data-nav="pricing">Retainers</button></li>
+
+
       <li><button class="f-link-btn" data-nav="contact">Contact</button></li>
+
     </ul>
-    <div class="f-copy">&copy; 2025 Montoya Marketing Agency &middot; Bonsall, CA</div>
+
+    <div class="f-copy">&copy; 2025 Copper Finch &middot; Bonsall, CA</div>
+
   </footer>
+
 </div>
+
+
 
 <!-- ══════════════ PROCESS ══════════════ -->
+
 <div id="page-process" class="page">
+
   <div class="proc-hero">
+
     <div class="section-label">How We Work</div>
+
     <h2>A deliberate process.<br><em>Every engagement.</em></h2>
+
     <p class="lead">From first conversation to ongoing optimization &mdash; a structured approach that eliminates guesswork and keeps every party accountable.</p>
+
   </div>
+
+
 
   <div class="proc-list">
+
     <div class="proc-item"><div class="proc-num">01</div><div><span class="proc-title">Discovery &amp; Audit</span><span class="proc-desc">Before recommending a single tactic, we conduct a thorough audit of your current digital presence, competitive landscape, target audience, and business objectives. This forms the factual foundation of everything that follows.</span><span class="proc-note">&#10003; Delivered as a written audit report</span></div></div>
+
     <div class="proc-item"><div class="proc-num">02</div><div><span class="proc-title">Strategy Development</span><span class="proc-desc">A channel-specific marketing strategy is documented and presented for your review and approval. This defines target personas, key messages, channel mix, KPIs, and a 90-day execution roadmap. Nothing proceeds without your sign-off.</span><span class="proc-note">&#10003; Delivered as a strategy document for your records</span></div></div>
+
     <div class="proc-item"><div class="proc-num">03</div><div><span class="proc-title">Retainer Agreement</span><span class="proc-desc">We formalize the engagement with a clear monthly retainer agreement that outlines exact deliverables, revision rights, communication expectations, response time SLAs, and cancellation terms. You will always know precisely what you are paying for.</span><span class="proc-note">&#10003; Signed agreement provided before any work begins</span></div></div>
+
     <div class="proc-item"><div class="proc-num">04</div><div><span class="proc-title">Creative Execution &amp; Delivery</span><span class="proc-desc">Campaigns are built and submitted for your approval before going live. All creative assets, copy, and campaign structures are shared in advance. We operate on a content calendar so you always know what is coming and when.</span><span class="proc-note">&#10003; Approval required before any content is published</span></div></div>
+
     <div class="proc-item"><div class="proc-num">05</div><div><span class="proc-title">Monthly Reporting &amp; Strategy Review</span><span class="proc-desc">At the end of each month, you receive a comprehensive performance report and join a strategy call to review results, discuss what the data is telling us, and agree on priorities for the following month. No surprises, no spin.</span><span class="proc-note">&#10003; Written report delivered before each monthly call</span></div></div>
+
     <div class="proc-item"><div class="proc-num">06</div><div><span class="proc-title">Optimize &amp; Scale</span><span class="proc-desc">Data from every campaign informs the next. We continuously refine targeting, messaging, and channel allocation to improve performance over time. When something is working, we invest more in it. When it is not, we adapt quickly.</span><span class="proc-note">&#10003; Ongoing optimization included in all retainer plans</span></div></div>
+
   </div>
+
+
 
   <div class="proc-cta">
+
     <h2 class="lt">Ready to begin?</h2>
+
     <p class="lead lt" style="margin:1rem auto 2.5rem;text-align:center;">The first step is a no-obligation discovery call to understand your business and goals.</p>
+
     <button class="btn-b" data-nav="contact">Schedule a Discovery Call &#8594;</button>
+
   </div>
+
+
 
   <footer>
-    <button class="f-logo" data-nav="home">Montoya<span>.</span></button>
+
+    <button class="f-logo" data-nav="home">Copper Finch<span>.</span></button>
+
     <ul class="f-links">
+
       <li><button class="f-link-btn" data-nav="about">About</button></li>
+
       <li><button class="f-link-btn" data-nav="services">Services</button></li>
+
       <li><button class="f-link-btn" data-nav="process">Process</button></li>
-      <li><button class="f-link-btn" data-nav="pricing">Retainers</button></li>
+
+
       <li><button class="f-link-btn" data-nav="contact">Contact</button></li>
+
     </ul>
-    <div class="f-copy">&copy; 2025 Montoya Marketing Agency &middot; Bonsall, CA</div>
+
+    <div class="f-copy">&copy; 2025 Copper Finch &middot; Bonsall, CA</div>
+
   </footer>
+
 </div>
 
-<!-- ══════════════ PRICING ══════════════ -->
-<div id="page-pricing" class="page">
-  <div class="price-hero">
-    <div class="price-hero-grid">
-      <div><div class="section-label">Retainer Plans</div><h2>Transparent pricing.<br><em>No surprises.</em></h2><p class="price-note">All plans are monthly retainers. Cancel with 30 days' written notice.</p></div>
-      <p class="lead">Every plan includes a signed retainer agreement outlining exact deliverables, revision rights, and cancellation terms.</p>
-    </div>
-  </div>
 
-  <div class="price-plans">
-    <div class="plan-grid">
-      <div class="plan">
-        <div class="plan-bar"></div>
-        <div class="plan-tag">Starter</div>
-        <div class="plan-price"><sup>$</sup>850</div>
-        <div class="plan-per">per month &mdash; billed monthly</div>
-        <div class="plan-badge">Monthly Retainer</div>
-        <div class="plan-div"></div>
-        <div class="plan-desc">For businesses establishing a digital presence and beginning to build their audience.</div>
-        <ul class="plan-feats">
-          <li class="plan-feat"><div class="chk"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>8 social media posts per month</li>
-          <li class="plan-feat"><div class="chk"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>1 platform managed</li>
-          <li class="plan-feat"><div class="chk"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>1 email newsletter per month</li>
-          <li class="plan-feat"><div class="chk"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>Dedicated communication channel</li>
-          <li class="plan-feat"><div class="chk"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>48-hour response SLA</li>
-          <li class="plan-feat"><div class="chk"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>1 revision round per deliverable</li>
-        </ul>
-        <div class="plan-contract">Includes signed retainer agreement. Cancel with 30 days' written notice.</div>
-        <button class="btn-plan btn-plan-o" data-nav="contact">Get Started</button>
-      </div>
 
-      <div class="plan feat">
-        <div class="plan-bar"></div>
-        <div class="plan-tag">Growth &mdash; Most Popular</div>
-        <div class="plan-price"><sup>$</sup>1,000</div>
-        <div class="plan-per">per month &mdash; billed monthly</div>
-        <div class="plan-badge">Monthly Retainer</div>
-        <div class="plan-div"></div>
-        <div class="plan-desc">For growing businesses ready to invest in multi-channel marketing at scale.</div>
-        <ul class="plan-feats">
-          <li class="plan-feat"><div class="chk"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>12 social media posts per month</li>
-          <li class="plan-feat"><div class="chk"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>2 platforms managed</li>
-          <li class="plan-feat"><div class="chk"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>2 newsletter sends per month</li>
-          <li class="plan-feat"><div class="chk"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>Custom graphics &amp; visual assets</li>
-          <li class="plan-feat"><div class="chk"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>Monthly strategy call (30 min)</li>
-          <li class="plan-feat"><div class="chk"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>Monthly performance report</li>
-          <li class="plan-feat"><div class="chk"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>30-day content calendar</li>
-          <li class="plan-feat"><div class="chk"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>24-hour response SLA</li>
-          <li class="plan-feat"><div class="chk"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>2 revision rounds + 1hr consulting</li>
-        </ul>
-        <div class="plan-contract">Includes signed retainer agreement. Cancel with 30 days' written notice.</div>
-        <button class="btn-plan btn-plan-s" data-nav="contact">Get Started</button>
-      </div>
 
-      <div class="plan">
-        <div class="plan-bar"></div>
-        <div class="plan-tag">Pro</div>
-        <div class="plan-price"><sup>$</sup>1,250</div>
-        <div class="plan-per">per month &mdash; billed monthly</div>
-        <div class="plan-badge">Monthly Retainer</div>
-        <div class="plan-div"></div>
-        <div class="plan-desc">For established brands requiring full-service marketing management and strategic oversight.</div>
-        <ul class="plan-feats">
-          <li class="plan-feat"><div class="chk"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>16 social media posts per month</li>
-          <li class="plan-feat"><div class="chk"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>3 platforms managed</li>
-          <li class="plan-feat"><div class="chk"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>2 newsletter sends per month</li>
-          <li class="plan-feat"><div class="chk"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>Custom graphics &amp; visual assets</li>
-          <li class="plan-feat"><div class="chk"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>Monthly strategy call + report</li>
-          <li class="plan-feat"><div class="chk"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>30-day content calendar</li>
-          <li class="plan-feat"><div class="chk"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>Quarterly strategy review</li>
-          <li class="plan-feat"><div class="chk"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>Same-day response SLA</li>
-          <li class="plan-feat"><div class="chk"><svg viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/></svg></div>3 revision rounds + 2hrs consulting</li>
-        </ul>
-        <div class="plan-contract">Includes signed retainer agreement. Cancel with 30 days' written notice.</div>
-        <button class="btn-plan btn-plan-o" data-nav="contact">Get Started</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="price-faq">
-    <div class="section-label">Common Questions</div>
-    <h2>What you need <em>to know.</em></h2>
-    <div class="faq-grid">
-      <div class="faq-card"><span class="faq-q">What does the retainer agreement include?</span><span class="faq-a">Every plan includes a signed agreement that defines exact monthly deliverables, revision rights, response time SLAs, approval workflows, and cancellation terms. You will never wonder what you are paying for.</span></div>
-      <div class="faq-card"><span class="faq-q">How do I cancel?</span><span class="faq-a">Any plan can be cancelled with 30 days' written notice. There are no annual commitments, no early termination fees, and no penalty clauses. We earn your business every single month.</span></div>
-      <div class="faq-card"><span class="faq-q">What happens in the first month?</span><span class="faq-a">The first month begins with our discovery and audit process, followed by strategy development and your approval. Execution begins once the strategy is signed off. We do not rush to publish before the foundation is right.</span></div>
-      <div class="faq-card"><span class="faq-q">Do ad spend costs come out of the retainer?</span><span class="faq-a">No. The retainer covers our management and creative fees. Advertising spend (Google, Meta, etc.) is billed separately and goes directly to the platforms. We will recommend a budget during the strategy phase.</span></div>
-      <div class="faq-card"><span class="faq-q">Can I upgrade or downgrade plans?</span><span class="faq-a">Yes. You can move between plans with 30 days' notice. If your business needs change, we will adjust the engagement accordingly with a revised retainer agreement.</span></div>
-      <div class="faq-card"><span class="faq-q">Who will I be working with?</span><span class="faq-a">You will work directly with our founding team throughout the engagement. We do not delegate client relationships to junior staff. Your calls, messages, and approvals all go to the people doing the work.</span></div>
-    </div>
-  </div>
-
-  <footer>
-    <button class="f-logo" data-nav="home">Montoya<span>.</span></button>
-    <ul class="f-links">
-      <li><button class="f-link-btn" data-nav="about">About</button></li>
-      <li><button class="f-link-btn" data-nav="services">Services</button></li>
-      <li><button class="f-link-btn" data-nav="process">Process</button></li>
-      <li><button class="f-link-btn" data-nav="pricing">Retainers</button></li>
-      <li><button class="f-link-btn" data-nav="contact">Contact</button></li>
-    </ul>
-    <div class="f-copy">&copy; 2025 Montoya Marketing Agency &middot; Bonsall, CA</div>
-  </footer>
-</div>
 
 <!-- ══════════════ CONTACT ══════════════ -->
+
 <div id="page-contact" class="page">
+
   <div class="contact-wrap">
+
     <div class="section-label lt">Get In Touch</div>
+
     <h2 class="lt">Let's start a <em>conversation.</em></h2>
+
     <p class="lead lt">Tell us about your business and goals. We respond within one business day to schedule a discovery call.</p>
 
+
+
     <div class="contact-grid">
+
       <div>
+
         <div class="contact-detail"><span class="cd-label">Email</span><span class="cd-val"><a href="mailto:montoyamarketingfirm@gmail.com">montoyamarketingfirm@gmail.com</a></span></div>
+
         <div class="contact-detail"><span class="cd-label">Location</span><span class="cd-val">Bonsall, California</span></div>
+
         <div class="contact-detail"><span class="cd-label">Response Time</span><span class="cd-val">Within 1 business day</span></div>
+
         <div class="contact-detail"><span class="cd-label">Availability</span><span class="cd-val">Currently accepting new clients</span></div>
+
         <div class="contact-promise"><p>Every inquiry receives a personal response from our team &mdash; not an automated acknowledgment. We take the time to understand your business before recommending any engagement.</p></div>
+
       </div>
 
+
+
       <form class="contact-form" id="contactForm" action="https://formspree.io/f/mzdkqgrq" method="POST">
+
         <div class="form-row">
+
           <div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" placeholder="Jane" required></div>
+
           <div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" placeholder="Smith" required></div>
+
         </div>
+
         <div class="form-group"><label for="email">Business Email</label><input type="email" id="email" placeholder="jane@company.com" required></div>
+
         <div class="form-group"><label for="company">Company Name</label><input type="text" id="company" placeholder="Acme Inc."></div>
-        <div class="form-group">
-          <label for="plan">Plan of Interest</label>
-          <select id="plan">
-            <option value="">Select a retainer plan</option>
-            <option>Starter &mdash; $850/mo</option>
-            <option>Growth &mdash; $1,000/mo (Most Popular)</option>
-            <option>Pro &mdash; $1,250/mo</option>
-            <option>Not sure yet &mdash; let's talk</option>
-          </select>
-        </div>
+
         <div class="form-group"><label for="message">Tell us about your business &amp; goals</label><textarea id="message" placeholder="What does your business do, and what marketing challenges are you facing?"></textarea></div>
+
         <div class="form-submit">
+
           <button type="submit" class="btn-p">Send Message &#8594;</button>
+
           <span class="form-note-txt">We respond within 1 business day.</span>
+
         </div>
+
         <div id="form-success">Thank you &mdash; your message has been received. We will be in touch within one business day.</div>
+
       </form>
+
     </div>
+
   </div>
 
+
+
   <footer style="background:#070504;">
-    <button class="f-logo" data-nav="home">Montoya<span>.</span></button>
+
+    <button class="f-logo" data-nav="home">Copper Finch<span>.</span></button>
+
     <ul class="f-links">
+
       <li><button class="f-link-btn" data-nav="about">About</button></li>
+
       <li><button class="f-link-btn" data-nav="services">Services</button></li>
+
       <li><button class="f-link-btn" data-nav="process">Process</button></li>
-      <li><button class="f-link-btn" data-nav="pricing">Retainers</button></li>
+
+
       <li><button class="f-link-btn" data-nav="contact">Contact</button></li>
+
     </ul>
-    <div class="f-copy">&copy; 2025 Montoya Marketing Agency &middot; Bonsall, CA</div>
+
+    <div class="f-copy">&copy; 2025 Copper Finch &middot; Bonsall, CA</div>
+
   </footer>
+
 </div>
 
+
+
 <script>
+
 (function() {
+
   function navigate(name) {
+
     var pages = document.querySelectorAll('.page');
+
     for (var i = 0; i < pages.length; i++) {
+
       pages[i].classList.remove('active');
+
     }
+
     var target = document.getElementById('page-' + name);
+
     if (target) {
+
       target.classList.add('active');
+
     }
+
     var navBtns = document.querySelectorAll('.nav-btn');
+
     for (var j = 0; j < navBtns.length; j++) {
+
       navBtns[j].classList.toggle('active', navBtns[j].getAttribute('data-nav') === name);
+
     }
+
     window.scrollTo(0, 0);
+
     var hamburger = document.getElementById('hamburger');
+
     var mobileMenu = document.getElementById('mobileMenu');
+
     if (hamburger) hamburger.classList.remove('open');
+
     if (mobileMenu) mobileMenu.classList.remove('open');
+
   }
+
+
 
   document.addEventListener('click', function(e) {
+
     var target = e.target;
+
     while (target && target !== document) {
+
       var navTarget = target.getAttribute('data-nav');
+
       if (navTarget) {
+
         e.preventDefault();
+
         navigate(navTarget);
+
         return;
+
       }
+
       target = target.parentNode;
+
     }
+
   });
+
+
 
   window.addEventListener('scroll', function() {
+
     var nav = document.getElementById('nav');
+
     if (nav) nav.classList.toggle('stuck', window.scrollY > 10);
+
   });
 
+
+
   var hamburger = document.getElementById('hamburger');
+
   var mobileMenu = document.getElementById('mobileMenu');
+
   if (hamburger && mobileMenu) {
+
     hamburger.addEventListener('click', function() {
+
       hamburger.classList.toggle('open');
+
       mobileMenu.classList.toggle('open');
+
     });
+
   }
 
+
+
   var form = document.getElementById('contactForm');
+
   if (form) {
+
     form.addEventListener('submit', function(e) {
+
       e.preventDefault();
+
       var btn = form.querySelector('button[type="submit"]');
+
       btn.textContent = 'Sending...';
+
       btn.disabled = true;
+
       fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } }).then(function(r) {
+
         if (r.ok) {
+
                         var success = document.getElementById('form-success');
+
                         if (success) success.style.display = 'block';
+
                         btn.style.display = 'none';
+
                         form.reset();
+
         } else {
+
                         btn.textContent = 'Send Message →';
+
                         btn.disabled = false;
+
         }
+
       });
+
     });
+
   }
+
 })();
+
 </script>
+
 </body>
+
 </html>
